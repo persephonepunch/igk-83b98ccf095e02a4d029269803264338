@@ -1,0 +1,3713 @@
+backend:
+  name: git-gateway
+  accept_roles:
+    - admin
+    - editor
+  branch: master
+media_folder: theme/assets/images
+public_folder: /assets/images
+collections:
+  - name: pages
+    label: Pages
+    identifier_field: title
+    extension: md
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    folder: cms/pages
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '{{slug}}.html'
+      - label: Seo
+        name: seo
+        widget: object
+        collapsed: true
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            required: false
+          - label: Description
+            name: description
+            widget: string
+            required: false
+          - label: No index
+            name: noindex
+            widget: boolean
+            default: false
+            required: false
+          - label: Open Graph Title
+            name: og:title
+            widget: string
+            required: false
+          - label: Open Graph Image
+            name: og:image
+            widget: image
+            required: false
+            media_library:
+              config:
+                multiple: false
+          - label: Twitter Title
+            name: twitter:title
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Card
+            name: twitter:card
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Site
+            name: twitter:site
+            widget: string
+            required: false
+          - label: Twitter Creator
+            name: twitter:creator
+            widget: string
+            required: false
+          - label: Additional HTML tags
+            name: additional_tags
+            widget: text
+            required: false
+  - label: Theme Settings
+    name: settings
+    identifier_field: title
+    extension: json
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    files:
+      - label: General
+        name: site
+        file: cms/_data/settings/site.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: General
+          - hint: Full domain url (needed for a correct sitemap file)
+            name: domain
+            label: Domain
+            widget: string
+            required: false
+          - name: favicon
+            label: Favicon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: apple_touch_icon
+            label: Apple Touch Icon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: header_additional_content
+            label: Additional Content Header
+            hint: Content here will be placed before </head> tag
+            widget: text
+            required: false
+          - name: footer_additional_content
+            label: Additional Content Footer
+            hint: Content here will be placed before </body> tag
+            widget: text
+            required: false
+          - name: images_optimization
+            label: Images Optimization
+            widget: object
+            collapsed: false
+            fields:
+              - label: Image Formats
+                name: formats
+                widget: select
+                multiple: true
+                options:
+                  - label: Avif
+                    value: avif
+                  - label: Webp
+                    value: webp
+              - label: Image Dimensions
+                name: dimensions
+                widget: select
+                multiple: true
+                options:
+                  - label: '500'
+                    value: 500
+                  - label: '800'
+                    value: 800
+                  - label: '1080'
+                    value: 1080
+                  - label: '1600'
+                    value: 1600
+                  - label: '2000'
+                    value: 2000
+                  - label: '2600'
+                    value: 2600
+      - label: Colors
+        name: colors
+        file: cms/_data/colors.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Colors
+      - label: Texts
+        name: texts
+        file: cms/_data/texts.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Texts
+          - hint: "Original text: SHOP\_NOW, key: 1a42520c"
+            label: Text
+            name: 1a42520c
+            widget: string
+          - hint: >-
+              Original text: ⭐⭐⭐⭐⭐ IGK has delighted over 100,000+ gorgeous
+              customers! ⭐⭐⭐⭐⭐, key: 2dd8aca4
+            label: Text
+            name: 2dd8aca4
+            widget: string
+          - hint: 'Original text: Do the Most with, key: -39e0c081'
+            label: Text
+            name: '-39e0c081'
+            widget: string
+          - hint: 'Original text: Biotin-Packed, key: 3369b734'
+            label: Text
+            name: 3369b734
+            widget: string
+          - hint: 'Original text: Gummies, key: 79b494e9'
+            label: Text
+            name: 79b494e9
+            widget: string
+          - hint: "Original text: Do the Most with\_ , key: -44b290c1"
+            label: Text
+            name: '-44b290c1'
+            widget: string
+          - hint: "Original text: \_BIOTIN-PACKED\_, key: -4a654b74"
+            label: Text
+            name: '-4a654b74'
+            widget: string
+          - hint: "Original text: \_ GUMMIES, key: -17cd7a97"
+            label: Text
+            name: '-17cd7a97'
+            widget: string
+          - hint: 'Original text: Extra Shine. Extra Strength., key: -76bb73f0'
+            label: Text
+            name: '-76bb73f0'
+            widget: string
+          - hint: 'Original text: Extra Extra Hair Gummies, key: 6b3b032b'
+            label: Text
+            name: 6b3b032b
+            widget: string
+          - hint: 'Original text: SALON-APPROVED, key: -6cf6799'
+            label: Text
+            name: '-6cf6799'
+            widget: string
+          - hint: 'Original text: VEGAN, key: 4dc55a5'
+            label: Text
+            name: 4dc55a5
+            widget: string
+          - hint: 'Original text: GUTEN FREE, key: -25fa1463'
+            label: Text
+            name: '-25fa1463'
+            widget: string
+          - hint: 'Original text: MY HAIR NEEDS THESE!, key: ee6ff2b'
+            label: Text
+            name: ee6ff2b
+            widget: string
+          - hint: 'Original text: AWARD WINNING BRAND AS SEEN IN:, key: -44bcac4e'
+            label: Text
+            name: '-44bcac4e'
+            widget: string
+          - hint: >-
+              Original text: Everything You Need for Healthy Hair, key:
+              -77adcf88
+            label: Text
+            name: '-77adcf88'
+            widget: string
+          - hint: 'Original text: and nothing you don’t, key: 42d93e21'
+            label: Text
+            name: 42d93e21
+            widget: string
+          - hint: 'Original text: Enhances shine + , key: 1b814645'
+            label: Text
+            name: 1b814645
+            widget: string
+          - hint: 'Original text: elasticity, key: -26808647'
+            label: Text
+            name: '-26808647'
+            widget: string
+          - hint: 'Original text: Helps strengthen, key: 67912c58'
+            label: Text
+            name: 67912c58
+            widget: string
+          - hint: 'Original text: against breakage, key: 77d66b1f'
+            label: Text
+            name: 77d66b1f
+            widget: string
+          - hint: 'Original text: Promotes healthy , key: 72aefad0'
+            label: Text
+            name: 72aefad0
+            widget: string
+          - hint: 'Original text: hair + scalp, key: -20a4951e'
+            label: Text
+            name: '-20a4951e'
+            widget: string
+          - hint: 'Original text: Supports fullness + , key: 6e5da2d3'
+            label: Text
+            name: 6e5da2d3
+            widget: string
+          - hint: 'Original text: thickness, key: -3c0e088c'
+            label: Text
+            name: '-3c0e088c'
+            widget: string
+          - hint: "Original text: IGK HAS\_DELIGHTED\_OVER\_100,000+ gorgeous customers!, key: -43c0df7c"
+            label: Text
+            name: '-43c0df7c'
+            widget: string
+          - hint: >-
+              Original text: Buy Extra, Save Extra, See Extra Results, key:
+              642fa14e
+            label: Text
+            name: 642fa14e
+            widget: string
+          - hint: >-
+              Original text: It takes 60 to 90 days of consistent use to start
+              seeing your desired results. Bundle up to keep your momentum
+              growing all summer long!, key: -6f960edb
+            label: Text
+            name: '-6f960edb'
+            widget: text
+          - hint: 'Original text: SUBSCRIBE & SAVE, key: -1a1f713'
+            label: Text
+            name: '-1a1f713'
+            widget: string
+          - hint: 'Original text: ADDITIONAL 15% OFF, key: 41d4bc37'
+            label: Text
+            name: 41d4bc37
+            widget: string
+          - hint: "Original text: ONE\_TIME, key: -54a8bb19"
+            label: Text
+            name: '-54a8bb19'
+            widget: string
+          - hint: 'Original text: Gummies 1-Pack, key: -5f4c6694'
+            label: Text
+            name: '-5f4c6694'
+            widget: string
+          - hint: 'Original text: Just a taste!, key: 573a639d'
+            label: Text
+            name: 573a639d
+            widget: string
+          - hint: 'Original text: 30-Day Supply, key: 7d8a07a3'
+            label: Text
+            name: 7d8a07a3
+            widget: string
+          - hint: >-
+              Original text: Give your body the building blocks for shinier,
+              healthier-looking hair with our 30-day supply of gummies., key:
+              -7eb1d7cb
+            label: Text
+            name: '-7eb1d7cb'
+            widget: text
+          - hint: 'Original text: $39.00, key: 4057c0e4'
+            label: Text
+            name: 4057c0e4
+            widget: string
+          - hint: 'Original text: $33.15, key: 405506ce'
+            label: Text
+            name: 405506ce
+            widget: string
+          - hint: "Original text: BUY\_NOW, key: 3997497c"
+            label: Text
+            name: 3997497c
+            widget: string
+          - hint: 'Original text: $34.10 per unit, key: 6287b49f'
+            label: Text
+            name: 6287b49f
+            widget: string
+          - hint: 'Original text: SAVE 33%, key: -4cecfb5e'
+            label: Text
+            name: '-4cecfb5e'
+            widget: string
+          - hint: 'Original text: Buy 2, Get 1 Free, key: 6049f2b1'
+            label: Text
+            name: 6049f2b1
+            widget: string
+          - hint: 'Original text: Create better hair habits, key: -66af9d2f'
+            label: Text
+            name: '-66af9d2f'
+            widget: string
+          - hint: 'Original text: 90-Day Supply, key: 149c2ea9'
+            label: Text
+            name: 149c2ea9
+            widget: string
+          - hint: >-
+              Original text: This bundle helps unleash your hair’s full
+              potential with thicker-looking, stronger results., key: 13700924
+            label: Text
+            name: '13700924'
+            widget: text
+          - hint: 'Original text: $147.00, key: -390bbb22'
+            label: Text
+            name: '-390bbb22'
+            widget: string
+          - hint: 'Original text: $66.30, key: 4080aaa7'
+            label: Text
+            name: 4080aaa7
+            widget: string
+          - hint: 'Original text: $22.10 per unit, key: -5c5c2202'
+            label: Text
+            name: '-5c5c2202'
+            widget: string
+          - hint: 'Original text: SAVE 40%, key: -4cecf7fa'
+            label: Text
+            name: '-4cecf7fa'
+            widget: string
+          - hint: 'Original text: Buy 3, Get 2 Free, key: 5081d1d1'
+            label: Text
+            name: 5081d1d1
+            widget: string
+          - hint: 'Original text: Make it a lifestyle!, key: 3eae366e'
+            label: Text
+            name: 3eae366e
+            widget: string
+          - hint: 'Original text: 5-Month Supply, key: 1aa54167'
+            label: Text
+            name: 1aa54167
+            widget: string
+          - hint: >-
+              Original text: With our 5-month supply of gummies, you’ll never
+              miss a day. And you’ll have long-lasting results to prove it, like
+              More volume, and overall healthier hair., key: -20166b80
+            label: Text
+            name: '-20166b80'
+            widget: text
+          - hint: 'Original text: $195.00, key: -38c62e5b'
+            label: Text
+            name: '-38c62e5b'
+            widget: string
+          - hint: 'Original text: $99.45, key: 40ac4e6b'
+            label: Text
+            name: 40ac4e6b
+            widget: string
+          - hint: 'Original text: $19.89 per unit, key: -fcee0bc'
+            label: Text
+            name: '-fcee0bc'
+            widget: string
+          - hint: 'Original text: $117.00, key: -393601a5'
+            label: Text
+            name: '-393601a5'
+            widget: string
+          - hint: 'Original text: $78.00, key: 408faa89'
+            label: Text
+            name: 408faa89
+            widget: string
+          - hint: 'Original text: $26.00 per unit, key: -3734babf'
+            label: Text
+            name: '-3734babf'
+            widget: string
+          - hint: 'Original text: $23.40 per unit, key: 50d4fcc2'
+            label: Text
+            name: 50d4fcc2
+            widget: string
+          - hint: 'Original text: KEY INGREDIENT, key: -30bff9ae'
+            label: Text
+            name: '-30bff9ae'
+            widget: string
+          - hint: 'Original text: BIOTIN, key: 74c9ba91'
+            label: Text
+            name: 74c9ba91
+            widget: string
+          - hint: >-
+              Original text: 33333% of your daily biotin needs with just two
+              gummies per day!, key: -250a9dba
+            label: Text
+            name: '-250a9dba'
+            widget: string
+          - hint: >-
+              Original text: Healthy Hair In And Out of The Salon Chair, key:
+              -4f4465b
+            label: Text
+            name: '-4f4465b'
+            widget: string
+          - hint: "Original text: GET\_YOURS, key: -6fb5eb6a"
+            label: Text
+            name: '-6fb5eb6a'
+            widget: string
+          - hint: 'Original text: Tastier. More Concentrated., key: -27206a1d'
+            label: Text
+            name: '-27206a1d'
+            widget: string
+          - hint: 'Original text: Highly Effective., key: -260ebe88'
+            label: Text
+            name: '-260ebe88'
+            widget: string
+          - hint: 'Original text: Serving Size, key: 6508f7d5'
+            label: Text
+            name: 6508f7d5
+            widget: string
+          - hint: 'Original text: Biotin Per Serving, key: 23f9c4da'
+            label: Text
+            name: 23f9c4da
+            widget: string
+          - hint: 'Original text: 100% Vegan, key: -16171d27'
+            label: Text
+            name: '-16171d27'
+            widget: string
+          - hint: 'Original text: Naturally Flavored, key: 24373d67'
+            label: Text
+            name: 24373d67
+            widget: string
+          - hint: 'Original text: Tastes Amazing, key: -7143c107'
+            label: Text
+            name: '-7143c107'
+            widget: string
+          - hint: 'Original text: Price Per Serving, key: -4fbf20ae'
+            label: Text
+            name: '-4fbf20ae'
+            widget: string
+          - hint: 'Original text: EXTRA EXTRA, key: -4f826840'
+            label: Text
+            name: '-4f826840'
+            widget: string
+          - hint: 'Original text: HAIR GUMMIES, key: 5c51daab'
+            label: Text
+            name: 5c51daab
+            widget: string
+          - hint: 'Original text: 2 Gummies, key: 6b37defb'
+            label: Text
+            name: 6b37defb
+            widget: string
+          - hint: 'Original text: 10,000mcg, key: 4788558e'
+            label: Text
+            name: 4788558e
+            widget: string
+          - hint: 'Original text: $1.63, key: 21247be'
+            label: Text
+            name: 21247be
+            widget: string
+          - hint: 'Original text: OTHERS, key: -746fa89d'
+            label: Text
+            name: '-746fa89d'
+            widget: string
+          - hint: 'Original text: 3+ Capsules, key: 3b48d4ce'
+            label: Text
+            name: 3b48d4ce
+            widget: string
+          - hint: 'Original text: 5,000mcg, key: -122b0948'
+            label: Text
+            name: '-122b0948'
+            widget: string
+          - hint: 'Original text: $2+, key: 8d5d'
+            label: Text
+            name: 8d5d
+            widget: string
+          - hint: >-
+              Original text: Designed By Experts Who Actually Know Hair, key:
+              -45a0f0f
+            label: Text
+            name: '-45a0f0f'
+            widget: string
+          - hint: >-
+              Original text: "We were inspired by our work in the salons to
+              create these EXTRA EXTRA Biotin Gummies to support our clients
+              needs and we are absolutely obsessed with the results. These
+              gummies are super clean and effective to give you stronger,
+              shinier hair in and out of the salon chair.", key: -6b1be9a5
+            label: Text
+            name: '-6b1be9a5'
+            widget: text
+          - hint: >-
+              Original text: IGK FOUNDERS FRANCK, LEO, CHASE & AARON, key:
+              -10658d87
+            label: Text
+            name: '-10658d87'
+            widget: string
+          - hint: 'Original text: Still Have Questions?, key: -683ac04e'
+            label: Text
+            name: '-683ac04e'
+            widget: string
+          - hint: 'Original text: How long does it take to see results?, key: -1f497c'
+            label: Text
+            name: '-1f497c'
+            widget: string
+          - hint: >-
+              Original text: Individual results will vary, but many people start
+              seeing noticeable improvements within 60-90 days. Remember that
+              consistency is key when it comes to hair health, so we advise
+              making it a part of your daily routine. Store EXTRA EXTRA on your
+              nightstand or with your morning coffee pods — you know the drill.,
+              key: 4ffe1964
+            label: Text
+            name: 4ffe1964
+            widget: text
+          - hint: 'Original text: Will it work for my hair type?, key: 5b478efc'
+            label: Text
+            name: 5b478efc
+            widget: string
+          - hint: >-
+              Original text: Yes! Our gummies are designed for adults of all
+              hair types who want to improve the health and appearance of their
+              hair. Whether you're looking to strengthen strands, enhance
+              thickness, or boost shine, our gummies are here to help., key:
+              606a055e
+            label: Text
+            name: 606a055e
+            widget: text
+          - hint: 'Original text: Are these gummies completely vegan?, key: 77a18754'
+            label: Text
+            name: 77a18754
+            widget: string
+          - hint: >-
+              Original text: Absolutely! We believe in responsible and
+              sustainable hair care. Our EXTRA EXTRA Biotin Gummies are proudly
+              vegan and cruelty-free, formulated without any gelatin. It’s
+              important to our founders that you feel confident nourishing your
+              hair while staying true to your values., key: 4997e379
+            label: Text
+            name: '4997e379'
+            widget: text
+          - hint: >-
+              Original text: Can I take these gummies alongside other hair care
+              products or supplements?, key: -47742267
+            label: Text
+            name: '-47742267'
+            widget: string
+          - hint: >-
+              Original text: Our gummies are the perfect addition to any regular
+              hair care and supplement routine. We recommend using EXTRA EXTRA
+              Biotin Gummies along with our repairing and bond-building
+              collection: ANTISOCIAL Dry Hair Mask, PAYDAY Bond Building Repair
+              Shampoo + Conditioner, and CASH IN Repair Serum., key: 1789ba22
+            label: Text
+            name: 1789ba22
+            widget: text
+          - hint: >-
+              Original text: 2X MORE Biotin Than Your Average Hair Gummy, key:
+              -5dfff0c4
+            label: Text
+            name: '-5dfff0c4'
+            widget: string
+          - hint: >-
+              Original text: Most hair vitamins only contain 5,000mcg of biotin
+              (or even less) per serving…, key: 7e6bc1f2
+            label: Text
+            name: 7e6bc1f2
+            widget: string
+          - hint: >-
+              Original text: IGK’s EXTRA EXTRA contains a powerhouse of
+              10,000mcg of biotin for your healthiest hair ever., key: -48893e9a
+            label: Text
+            name: '-48893e9a'
+            widget: text
+          - hint: "Original text: Terms &\_Conditions, key: -3e157255"
+            label: Text
+            name: '-3e157255'
+            widget: string
+          - hint: 'Original text: Privacy Policy, key: -3fbde6f6'
+            label: Text
+            name: '-3fbde6f6'
+            widget: string
+          - hint: "Original text: Shipping &\_returns, key: -16341509"
+            label: Text
+            name: '-16341509'
+            widget: string
+          - hint: "Original text: GET\_UP\_TO 40%\_OFF YOUR\_GUMMIES, key: -61ad4792"
+            label: Text
+            name: '-61ad4792'
+            widget: string
+          - hint: 'Original text: ⭐⭐⭐⭐⭐ , key: 5f9892d0'
+            label: Text
+            name: 5f9892d0
+            widget: string
+          - hint: >-
+              Original text: IGK has delighted over 100,000+ gorgeous
+              customers!, key: -1cc932bc
+            label: Text
+            name: '-1cc932bc'
+            widget: string
+          - hint: 'Original text:  ⭐⭐⭐⭐⭐, key: -52b294d0'
+            label: Text
+            name: '-52b294d0'
+            widget: string
+          - hint: >-
+              Original text: Reset, revive, and repair overprocessed hair , key:
+              7dc5051a
+            label: Text
+            name: 7dc5051a
+            widget: string
+          - hint: "Original text:  \_instantly. , key: 23115ce0"
+            label: Text
+            name: 23115ce0
+            widget: string
+          - hint: 'Original text: Antisocial Overnight Dry Hair Mask, key: -5e80318'
+            label: Text
+            name: '-5e80318'
+            widget: string
+          - hint: 'Original text: MY HAIR NEEDS THIS!, key: 74180696'
+            label: Text
+            name: '74180696'
+            widget: string
+          - hint: 'Original text: Rated 4.5/5 By 1,000+ Customers, key: -68662687'
+            label: Text
+            name: '-68662687'
+            widget: string
+          - hint: 'Original text: TikTok Viral for a Reason , key: 4e71bd8a'
+            label: Text
+            name: 4e71bd8a
+            widget: string
+          - hint: 'Original text: Leaping Bunny Certified, key: -1494d639'
+            label: Text
+            name: '-1494d639'
+            widget: string
+          - hint: 'Original text: Gluten Free, key: -33d8b341'
+            label: Text
+            name: '-33d8b341'
+            widget: string
+          - hint: 'Original text: Safe For Chemically Treated Hair, key: -2ba0e980'
+            label: Text
+            name: '-2ba0e980'
+            widget: string
+          - hint: 'Original text: Game Changer!, key: -473691f3'
+            label: Text
+            name: '-473691f3'
+            widget: string
+          - hint: >-
+              Original text: "I am so in love with this spray! It's already done
+              wonders for my hair. I only wash my hair once a week so it's
+              usually looking pretty dry and frizzy by day 4-5 but this spray
+              has kept it looking and feeling SO soft. I could tell a huge
+              difference in my hair just after the first use. I don't think I
+              can live without it now!", key: -41e05128
+            label: Text
+            name: '-41e05128'
+            widget: text
+          - hint: 'Original text: Lacy P., key: 5f8a4553'
+            label: Text
+            name: 5f8a4553
+            widget: string
+          - hint: 'Original text: Verified Buyer, key: 7eaada5b'
+            label: Text
+            name: 7eaada5b
+            widget: string
+          - hint: 'Original text: Amazing, key: 2e053c3d'
+            label: Text
+            name: 2e053c3d
+            widget: string
+          - hint: >-
+              Original text: I have thin, dry hair. I was skeptical. I’ve been
+              using another bonding product and ran out. Tried this. It helps my
+              curls last all day long. This is a big deal for my hair. I’m
+              excited to continue using., key: 3d87b8ad
+            label: Text
+            name: 3d87b8ad
+            widget: text
+          - hint: 'Original text: Miranda F., key: 590dd828'
+            label: Text
+            name: 590dd828
+            widget: string
+          - hint: 'Original text: Makes Pretty Soft Flowing Hair, key: -7fc2a48b'
+            label: Text
+            name: '-7fc2a48b'
+            widget: string
+          - hint: >-
+              Original text: Great purchase! I have loved everything IGK makes
+              for hair! Just fabulous! Ordered it for my daughter and she loved
+              it also. Now that is really amazing!!!, key: -e111ca3
+            label: Text
+            name: '-e111ca3'
+            widget: text
+          - hint: 'Original text: Lorraine W., key: 2d225a15'
+            label: Text
+            name: 2d225a15
+            widget: string
+          - hint: 'Original text: Love this hair mask, key: -6d56b04a'
+            label: Text
+            name: '-6d56b04a'
+            widget: string
+          - hint: >-
+              Original text: I love the condition of my hair the morning after I
+              use Antisocial Dry Hair Mask. I also use it to freshen my hair
+              after a workout instead of dry shampoo. Great product., key:
+              -e406a06
+            label: Text
+            name: '-e406a06'
+            widget: text
+          - hint: 'Original text: Kathleen M., key: -6b72ff2b'
+            label: Text
+            name: '-6b72ff2b'
+            widget: string
+          - hint: 'Original text: I love the results., key: 34aaa79e'
+            label: Text
+            name: 34aaa79e
+            widget: string
+          - hint: >-
+              Original text: I really like it. My hair is terribly frizzy even
+              after I straighten it. Just a little bit of your product, and my
+              hair stays smooth and straight all day long. I will definitely
+              re-order again., key: -31ecdd24
+            label: Text
+            name: '-31ecdd24'
+            widget: text
+          - hint: 'Original text: Jessica W., key: 429acfab'
+            label: Text
+            name: 429acfab
+            widget: string
+          - hint: >-
+              Original text: Rated By Hundreds of Gorgeous Customers, key:
+              -5ddde06b
+            label: Text
+            name: '-5ddde06b'
+            widget: string
+          - hint: 'Original text: Antisocial Bond-Building Hair Mask, key: -7f0b3a69'
+            label: Text
+            name: '-7f0b3a69'
+            widget: string
+          - hint: >-
+              Original text: Meet the easiest hair mask ever. Just spray, brush
+              through, and go. No rinse or restyling needed. You get all the
+              reparative, softening power of a traditional mask without any of
+              the mess. , key: 303ecb1
+            label: Text
+            name: 303ecb1
+            widget: text
+          - hint: 'Original text: SAVE 15%, key: -4ced02a2'
+            label: Text
+            name: '-4ced02a2'
+            widget: string
+          - hint: 'Original text: ANTISOCIAL 1 SPRAY, key: -2f3949f3'
+            label: Text
+            name: '-2f3949f3'
+            widget: string
+          - hint: 'Original text: $36.00, key: 405663c7'
+            label: Text
+            name: 405663c7
+            widget: string
+          - hint: 'Original text: $30.60, key: 4053aa47'
+            label: Text
+            name: 4053aa47
+            widget: string
+          - hint: 'Original text: SAVE 43%, key: -4cecf79d'
+            label: Text
+            name: '-4cecf79d'
+            widget: string
+          - hint: "Original text: Buy 2, GET\_1 FREE, key: 4eb39b11"
+            label: Text
+            name: 4eb39b11
+            widget: string
+          - hint: 'Original text: $108.00, key: -3943a4c7'
+            label: Text
+            name: '-3943a4c7'
+            widget: string
+          - hint: 'Original text: $61.20, key: 407e64ad'
+            label: Text
+            name: 407e64ad
+            widget: string
+          - hint: 'Original text: $20.40 per unit, key: -7ab416c1'
+            label: Text
+            name: '-7ab416c1'
+            widget: string
+          - hint: 'Original text: SAVE 49%, key: -4cecf6e3'
+            label: Text
+            name: '-4cecf6e3'
+            widget: string
+          - hint: "Original text: Buy 3, GET\_2 FREE, key: 3eeb7a31"
+            label: Text
+            name: 3eeb7a31
+            widget: string
+          - hint: 'Original text: $180.00, key: -38d68bb7'
+            label: Text
+            name: '-38d68bb7'
+            widget: string
+          - hint: 'Original text: $91.80, key: 40a8abea'
+            label: Text
+            name: 40a8abea
+            widget: string
+          - hint: 'Original text: $18.36 per unit, key: 3c5a47a1'
+            label: Text
+            name: 3c5a47a1
+            widget: string
+          - hint: 'Original text: 3 PACK, key: 58ef71e6'
+            label: Text
+            name: 58ef71e6
+            widget: string
+          - hint: 'Original text: $72.00, key: 408cf04f'
+            label: Text
+            name: 408cf04f
+            widget: string
+          - hint: 'Original text: $24.00 per unit, key: -143ac7c1'
+            label: Text
+            name: '-143ac7c1'
+            widget: string
+          - hint: 'Original text: SAVE 39%, key: -4cecfaa4'
+            label: Text
+            name: '-4cecfaa4'
+            widget: string
+          - hint: 'Original text: 5 PACK, key: 5c592324'
+            label: Text
+            name: 5c592324
+            widget: string
+          - hint: 'Original text: $21.60 per unit, key: -6267aabe'
+            label: Text
+            name: '-6267aabe'
+            widget: string
+          - hint: 'Original text: An Unrivaled Hair Repair Formula, key: -74183232'
+            label: Text
+            name: '-74183232'
+            widget: string
+          - hint: 'Original text: Made with Just the Good Stuff, key: -40231c5b'
+            label: Text
+            name: '-40231c5b'
+            widget: string
+          - hint: >-
+              Original text: Made with vegan silk and bond-building technology,
+              key: 36023818
+            label: Text
+            name: '36023818'
+            widget: string
+          - hint: 'Original text: 100% vegan (we love animals) , key: 64135b11'
+            label: Text
+            name: 64135b11
+            widget: string
+          - hint: 'Original text: Gluten-free , key: -2f4bc48c'
+            label: Text
+            name: '-2f4bc48c'
+            widget: string
+          - hint: >-
+              Original text: Time-release formula for long-lasting results, key:
+              3279f45b
+            label: Text
+            name: 3279f45b
+            widget: string
+          - hint: 'Original text: The Instant Repair System, key: 42511374'
+            label: Text
+            name: '42511374'
+            widget: string
+          - hint: 'Original text: That Will WOW You, key: 1d15f869'
+            label: Text
+            name: 1d15f869
+            widget: string
+          - hint: 'Original text: Repairs Damage, key: 34371689'
+            label: Text
+            name: '34371689'
+            widget: string
+          - hint: 'Original text: Overnight, Time-, key: -5b7d7238'
+            label: Text
+            name: '-5b7d7238'
+            widget: string
+          - hint: 'Original text: Release Formula, key: 6ac86e0d'
+            label: Text
+            name: 6ac86e0d
+            widget: string
+          - hint: 'Original text: Softens Strands, key: -2a4668b3'
+            label: Text
+            name: '-2a4668b3'
+            widget: string
+          - hint: 'Original text: Lightweight, key: a2b76ee'
+            label: Text
+            name: a2b76ee
+            widget: string
+          - hint: 'Original text: Finish, key: 7d6e78b3'
+            label: Text
+            name: 7d6e78b3
+            widget: string
+          - hint: >-
+              Original text: A Reparative, Bond-Building Powerhouse, key:
+              -21373979
+            label: Text
+            name: '-21373979'
+            widget: string
+          - hint: 'Original text: Repairs and softens hair, key: -42b1b25b'
+            label: Text
+            name: '-42b1b25b'
+            widget: string
+          - hint: 'Original text: No wash needed, key: 252e2897'
+            label: Text
+            name: '252e2897'
+            widget: string
+          - hint: 'Original text: Time-release formula, key: -35409493'
+            label: Text
+            name: '-35409493'
+            widget: string
+          - hint: 'Original text: Vegan, key: 4eb5da5'
+            label: Text
+            name: 4eb5da5
+            widget: string
+          - hint: 'Original text: Gluten-free, key: -3312f5d4'
+            label: Text
+            name: '-3312f5d4'
+            widget: string
+          - hint: 'Original text: IGK Antisocial, key: -48bcc37e'
+            label: Text
+            name: '-48bcc37e'
+            widget: string
+          - hint: 'Original text: Other Hair Masks, key: -7f954787'
+            label: Text
+            name: '-7f954787'
+            widget: string
+          - hint: 'Original text: When should I use Antisocial?, key: -41c50167'
+            label: Text
+            name: '-41c50167'
+            widget: string
+          - hint: >-
+              Original text: This lightweight formula uses innovative leave-in
+              bond-building technology to strengthen and repair dry, damaged
+              ends. Use it as an overnight mask or try it as a finishing spray
+              for smooth, shiny, long-lasting results., key: -d758d63
+            label: Text
+            name: '-d758d63'
+            widget: text
+          - hint: >-
+              Original text: Do I need to wash Antisocial out after use?, key:
+              7c561cc5
+            label: Text
+            name: 7c561cc5
+            widget: string
+          - hint: >-
+              Original text: No! The best part about Antisocial is that it’s
+              completely residue and mess-free. You can wake up and go—no need
+              to wash or restyle., key: 16f8fed2
+            label: Text
+            name: 16f8fed2
+            widget: text
+          - hint: 'Original text: Is Antisocial cruelty free?, key: -6b8724d6'
+            label: Text
+            name: '-6b8724d6'
+            widget: string
+          - hint: >-
+              Original text: Yes! IGK is committed to creating the best products
+              for hair and the world. Antisocial is completely vegan and cruelty
+              free—backed by Leaping Bunny certification., key: -19d8e1a5
+            label: Text
+            name: '-19d8e1a5'
+            widget: text
+          - hint: >-
+              Original text: Can I use Antisocial if I have colored hair?, key:
+              -18b9270
+            label: Text
+            name: '-18b9270'
+            widget: string
+          - hint: >-
+              Original text: Yes! Antisocial is great for all hair types,
+              including colored and chemically treated hair., key: -47fc83d7
+            label: Text
+            name: '-47fc83d7'
+            widget: text
+          - hint: "Original text: GET\_UP\_TO 49%\_OFF ANTISOCIAL, key: -d688936"
+            label: Text
+            name: '-d688936'
+            widget: string
+          - hint: 'Original text: Bye, Humidity! , key: b15c274'
+            label: Text
+            name: b15c274
+            widget: string
+          - hint: 'Original text: This is The Ultimate , key: -7e54ae94'
+            label: Text
+            name: '-7e54ae94'
+            widget: string
+          - hint: "Original text: \_ Summer Frizz \_, key: -3d83f194"
+            label: Text
+            name: '-3d83f194'
+            widget: string
+          - hint: 'Original text:  Fix, key: f9fd5'
+            label: Text
+            name: f9fd5
+            widget: string
+          - hint: 'Original text: Good Behavior Smoothing Spray, key: -298da30a'
+            label: Text
+            name: '-298da30a'
+            widget: string
+          - hint: 'Original text: Our Viral Keratin-In-A-Can , key: -42296fe3'
+            label: Text
+            name: '-42296fe3'
+            widget: string
+          - hint: 'Original text: — Without The Harmful Chemicals, key: 165f9877'
+            label: Text
+            name: 165f9877
+            widget: string
+          - hint: 'Original text: SMOOOOOOTH!, key: 6e31a573'
+            label: Text
+            name: 6e31a573
+            widget: string
+          - hint: >-
+              Original text: I bought this with Antisocial. I read really good
+              things about it so I thought "Why not?" I used this after the
+              shower and blow-dried my hair. Wow! My hair was so smooth. I have
+              straight hair but, after showers, it tends to dry frizzy in
+              certain parts. Then I ran a flat iron through it and my hair
+              looked amazing! Love this stuff!!!, key: 383bfcbb
+            label: Text
+            name: 383bfcbb
+            widget: text
+          - hint: 'Original text: Sasha W., key: -7c9e8967'
+            label: Text
+            name: '-7c9e8967'
+            widget: string
+          - hint: 'Original text: No more frizz!, key: -289205f0'
+            label: Text
+            name: '-289205f0'
+            widget: string
+          - hint: >-
+              Original text: “The first time I used it I was pleasantly
+              surprised all of my frizz was gone! Really happy to know that it
+              has heat protection. This product exceeded my expectations.”, key:
+              -7447bd3
+            label: Text
+            name: '-7447bd3'
+            widget: text
+          - hint: 'Original text: Roseann O., key: -420a6973'
+            label: Text
+            name: '-420a6973'
+            widget: string
+          - hint: 'Original text: Love this, key: 1f656e6c'
+            label: Text
+            name: 1f656e6c
+            widget: string
+          - hint: >-
+              Original text: This product exceeded my expectations. The first
+              time I used it I was pleasantly surprised all of my frizz was
+              gone! Really happy to know that it has heat protection., key:
+              -65143a7a
+            label: Text
+            name: '-65143a7a'
+            widget: text
+          - hint: 'Original text: Starla B., key: -7e4407b'
+            label: Text
+            name: '-7e4407b'
+            widget: string
+          - hint: 'Original text: Works well, key: 735a32cc'
+            label: Text
+            name: 735a32cc
+            widget: string
+          - hint: >-
+              Original text: Works well and doesn’t put a heavy layer of product
+              on your hair. I have to be careful using some products because
+              they make my hair too oily. This doesn’t at all., key: -3800ee51
+            label: Text
+            name: '-3800ee51'
+            widget: text
+          - hint: 'Original text: Stacey C., key: -21d4ad4c'
+            label: Text
+            name: '-21d4ad4c'
+            widget: string
+          - hint: >-
+              Original text: Get keratin-like shine without the dangerous
+              chemicals—shown to make hair 5X smoother after just ONE use., key:
+              -48433872
+            label: Text
+            name: '-48433872'
+            widget: text
+          - hint: 'Original text: 1 SPRAY, key: 5b63a3de'
+            label: Text
+            name: 5b63a3de
+            widget: string
+          - hint: 'Original text: $34.00, key: 40557b09'
+            label: Text
+            name: 40557b09
+            widget: string
+          - hint: 'Original text: $28.90, key: 4049361b'
+            label: Text
+            name: 4049361b
+            widget: string
+          - hint: "Original text: BUY\_2, GET\_1 FREE, key: -3010996f"
+            label: Text
+            name: '-3010996f'
+            widget: string
+          - hint: 'Original text: $102.00, key: -39465f01'
+            label: Text
+            name: '-39465f01'
+            widget: string
+          - hint: 'Original text: $57.80, key: 40730820'
+            label: Text
+            name: '40730820'
+            widget: string
+          - hint: 'Original text: $19.26 per unit, key: -6a07649f'
+            label: Text
+            name: '-6a07649f'
+            widget: string
+          - hint: "Original text: BUY 3, GET\_2 FREE, key: -2ebd89cf"
+            label: Text
+            name: '-2ebd89cf'
+            widget: string
+          - hint: 'Original text: $170.00, key: -38e4a338'
+            label: Text
+            name: '-38e4a338'
+            widget: string
+          - hint: 'Original text: $86.70, key: 409cda25'
+            label: Text
+            name: 409cda25
+            widget: string
+          - hint: 'Original text: $17.34 per unit, key: 65445ee2'
+            label: Text
+            name: 65445ee2
+            widget: string
+          - hint: "Original text: BUY 2, GET\_1 FREE, key: -1ef568ef"
+            label: Text
+            name: '-1ef568ef'
+            widget: string
+          - hint: 'Original text: $68.00, key: 40819308'
+            label: Text
+            name: '40819308'
+            widget: string
+          - hint: 'Original text: $22.66 per unit, key: 45d4027d'
+            label: Text
+            name: 45d4027d
+            widget: string
+          - hint: 'Original text: You Deserve Good Hair Days, key: -2247651b'
+            label: Text
+            name: '-2247651b'
+            widget: string
+          - hint: >-
+              Original text: Made with spirulina protein and formaldehyde-free
+              bonding polymers, key: 5a318585
+            label: Text
+            name: 5a318585
+            widget: string
+          - hint: 'Original text: 100% vegan (we love animals), key: 4d8d02ef'
+            label: Text
+            name: 4d8d02ef
+            widget: string
+          - hint: >-
+              Original text: Heat-activated for silky smooth styling, key:
+              -78247825
+            label: Text
+            name: '-78247825'
+            widget: string
+          - hint: 'Original text: 1 Product, 4 Benefits, key: 3eb3519c'
+            label: Text
+            name: 3eb3519c
+            widget: string
+          - hint: 'Original text: 24-Hour Frizz Control, key: -5a166697'
+            label: Text
+            name: '-5a166697'
+            widget: string
+          - hint: 'Original text: Gently Detangles, key: 4e051a24'
+            label: Text
+            name: 4e051a24
+            widget: string
+          - hint: 'Original text: Protects Against Heat Up To 450º F, key: 43492606'
+            label: Text
+            name: '43492606'
+            widget: string
+          - hint: 'Original text: High-Shine, key: 1f670980'
+            label: Text
+            name: 1f670980
+            widget: string
+          - hint: 'Original text: We Perfected Keratin-in-a-Can, key: 5ff4ecbf'
+            label: Text
+            name: 5ff4ecbf
+            widget: string
+          - hint: 'Original text: 24-hour frizz control, key: -5ab1ea77'
+            label: Text
+            name: '-5ab1ea77'
+            widget: string
+          - hint: 'Original text: Leaves a shiny finish, key: -4b115c69'
+            label: Text
+            name: '-4b115c69'
+            widget: string
+          - hint: 'Original text: Protects against heat up to 450ºF, key: b44ae26'
+            label: Text
+            name: b44ae26
+            widget: string
+          - hint: 'Original text: IGK Good Behavior, key: 7d945662'
+            label: Text
+            name: 7d945662
+            widget: string
+          - hint: 'Original text: Other Smoothing Sprays, key: -4f3fb8fe'
+            label: Text
+            name: '-4f3fb8fe'
+            widget: string
+          - hint: >-
+              Original text: "The idea of Good Behavior came from the needs of
+              the IGK salon clients as the demand for a chemical keratin
+              treatment was constantly being requested. The founders came
+              together to create a product that clients can take home that was
+              safer, easier, and more cost-effective.", key: -70d377c3
+            label: Text
+            name: '-70d377c3'
+            widget: text
+          - hint: 'Original text: Aaron Grenia, co-founder of IGK, key: 4d699ee7'
+            label: Text
+            name: 4d699ee7
+            widget: string
+          - hint: >-
+              Original text: Does Good Behavior Smoothing Spray actually work?,
+              key: 16a3191a
+            label: Text
+            name: 16a3191a
+            widget: string
+          - hint: >-
+              Original text: Yes! In fact, in consumer perception studies, 97%
+              of participants agreed that Good Behavior Smoothing Spray helps
+              reduce frizz, keeps hair smooth against humidity, and makes hair
+              look healthier after each use., key: 149b55d5
+            label: Text
+            name: 149b55d5
+            widget: text
+          - hint: >-
+              Original text: When should I use Good Behavior Smoothing Spray?,
+              key: 2e1cc980
+            label: Text
+            name: 2e1cc980
+            widget: string
+          - hint: >-
+              Original text: Spray Good Behavior on damp or dry hair before
+              styling. The formula is heat activated, so use it before
+              blow-drying for best results. For an even silkier, “just left the
+              salon” look, apply it again and finish with a flat iron., key:
+              -3b4ffd57
+            label: Text
+            name: '-3b4ffd57'
+            widget: text
+          - hint: 'Original text: Can I use Good Behavior on wet hair?, key: 74ad79ad'
+            label: Text
+            name: 74ad79ad
+            widget: string
+          - hint: >-
+              Original text: It’s best to use Good Behavior on damp or dry hair,
+              right before styling. Spray it on and activate with heat to get
+              your shiniest, smoothest at-home blowout ever., key: 2dc98a3d
+            label: Text
+            name: 2dc98a3d
+            widget: text
+          - hint: "Original text: GET\_UP\_TO 49%\_OFF GOOD\_BEHAVIOR, key: 5329177a"
+            label: Text
+            name: 5329177a
+            widget: string
+          - hint: >-
+              Original text: ⭐⭐⭐⭐⭐ IGK is rated 5 stars by 7,000+ gorgeous
+              customers! ⭐⭐⭐⭐⭐, key: 2a651677
+            label: Text
+            name: 2a651677
+            widget: string
+          - hint: "Original text: YOUR\_NEW\_FAVORITE, key: 7ea1b009"
+            label: Text
+            name: 7ea1b009
+            widget: string
+          - hint: "Original text: HAIR\_GUMMY, key: 147ccd"
+            label: Text
+            name: 147ccd
+            widget: string
+          - hint: 'Original text: Extra Extra BIOTIN Gummies, key: -76380d46'
+            label: Text
+            name: '-76380d46'
+            widget: string
+          - hint: 'Original text: GLUTEN FREE, key: -151d4b41'
+            label: Text
+            name: '-151d4b41'
+            widget: string
+          - hint: 'Original text: SALON APPROVED, key: 71b6f55a'
+            label: Text
+            name: 71b6f55a
+            widget: string
+          - hint: 'Original text: LOW SUGAR, key: 4860592a'
+            label: Text
+            name: 4860592a
+            widget: string
+          - hint: >-
+              Original text: IGK is rated 5 stars by 7,000+ gorgeous customers!,
+              key: 64572db7
+            label: Text
+            name: 64572db7
+            widget: string
+          - hint: 'Original text: EXTRA EXTRA Biotin Gummies, key: 5289dada'
+            label: Text
+            name: 5289dada
+            widget: string
+          - hint: >-
+              Original text: Packed with 10,000mcg of biotin, our natural
+              strawberry-flavored gummies are designed to support stronger,
+              fuller, healthier hair., key: -3f286bf2
+            label: Text
+            name: '-3f286bf2'
+            widget: text
+          - hint: >-
+              Original text: The more you buy, the more gifts you get, key:
+              -7153fb67
+            label: Text
+            name: '-7153fb67'
+            widget: string
+          - hint: 'Original text: 1, key: 31'
+            label: Text
+            name: '31'
+            widget: string
+          - hint: 'Original text: 1 FREE GIFT, key: -6c843ecb'
+            label: Text
+            name: '-6c843ecb'
+            widget: string
+          - hint: 'Original text: 6 PACK, key: 5e0dfbc3'
+            label: Text
+            name: 5e0dfbc3
+            widget: string
+          - hint: 'Original text: 2 FREE GIFTS, key: -1c51f4e3'
+            label: Text
+            name: '-1c51f4e3'
+            widget: string
+          - hint: "Original text: QUANTITY: 30 DAY\_SUPPLY, key: -36d8f51b"
+            label: Text
+            name: '-36d8f51b'
+            widget: string
+          - hint: "Original text: QUANTITY: 90 DAY\_SUPPLY, key: 603931eb"
+            label: Text
+            name: 603931eb
+            widget: string
+          - hint: "Original text: QUANTITY: 6 MONTHs\_SUPPLY, key: -5f68cf5f"
+            label: Text
+            name: '-5f68cf5f'
+            widget: string
+          - hint: "Original text: Sub &\_Save, key: -5e20f429"
+            label: Text
+            name: '-5e20f429'
+            widget: string
+          - hint: 'Original text: $198.90, key: -38c4d027'
+            label: Text
+            name: '-38c4d027'
+            widget: string
+          - hint: 'Original text: $234.00, key: -37665721'
+            label: Text
+            name: '-37665721'
+            widget: string
+          - hint: 'Original text: You save extra 15% OFF, key: -1084f082'
+            label: Text
+            name: '-1084f082'
+            widget: string
+          - hint: 'Original text: Skip, swap, or cancel anytime, key: 75daf6d6'
+            label: Text
+            name: 75daf6d6
+            widget: string
+          - hint: 'Original text: Free shipping included, key: 5c848a5a'
+            label: Text
+            name: 5c848a5a
+            widget: string
+          - hint: "Original text: Included\_GIFT\_#1:\_Antisocial Hair Spray, key: 90e2300"
+            label: Text
+            name: '90e2300'
+            widget: string
+          - hint: "Original text: Included\_GIFT\_#2:\_Cash In Repair Serum, key: 3dd43554"
+            label: Text
+            name: 3dd43554
+            widget: string
+          - hint: "Original text: 15%\_OFF, key: 7cd582b0"
+            label: Text
+            name: 7cd582b0
+            widget: string
+          - hint: 'Original text: One Time, key: 77ae7c87'
+            label: Text
+            name: 77ae7c87
+            widget: string
+          - hint: "Original text: ADD\_TO\_BAG, key: -5b7dc6be"
+            label: Text
+            name: '-5b7dc6be'
+            widget: string
+          - hint: 'Original text: 🔒 GIFTS UNLOCKED: 0/2, key: 64b09fc2'
+            label: Text
+            name: 64b09fc2
+            widget: string
+          - hint: 'Original text: 🎁 GIFTS UNLOCKED: 1/2, key: -7997a22d'
+            label: Text
+            name: '-7997a22d'
+            widget: string
+          - hint: 'Original text: 🎁🎁 GIFTS UNLOCKED: 2/2, key: 7ecfde99'
+            label: Text
+            name: 7ecfde99
+            widget: string
+          - hint: >-
+              Original text: 🔒 WILL UNLOCK WHEN YOU SELECT THE 3 PACK, key:
+              157b6f8b
+            label: Text
+            name: 157b6f8b
+            widget: string
+          - hint: 'Original text: GIFT #1: Antisocial, key: -6c1fda8d'
+            label: Text
+            name: '-6c1fda8d'
+            widget: string
+          - hint: 'Original text: Time-release dry overnight hair mask, key: 68da1920'
+            label: Text
+            name: 68da1920
+            widget: string
+          - hint: "Original text: Price:\_, key: 5071228f"
+            label: Text
+            name: 5071228f
+            widget: string
+          - hint: 'Original text:  FREE, key: 1e3fe8c'
+            label: Text
+            name: 1e3fe8c
+            widget: string
+          - hint: 'Original text: 🎉 YOU''VE UNLOCKED THE FIRST GIFT, key: -6f0bc5ea'
+            label: Text
+            name: '-6f0bc5ea'
+            widget: string
+          - hint: >-
+              Original text: 🔒 WILL UNLOCK WHEN YOU SELECT THE 6 PACK, key:
+              1a99f968
+            label: Text
+            name: 1a99f968
+            widget: string
+          - hint: 'Original text: GIFT #2: Cash In, key: 546cfccd'
+            label: Text
+            name: 546cfccd
+            widget: string
+          - hint: "Original text: INSTANT\_REPAIR\_SERUM, key: -4cbeb7c"
+            label: Text
+            name: '-4cbeb7c'
+            widget: string
+          - hint: 'Original text: 🎉 YOU''VE UNLOCKED THE SECOND GIFT, key: -59a3d3a'
+            label: Text
+            name: '-59a3d3a'
+            widget: string
+          - hint: 'Original text: and Nothing you don’t, key: 2d9d7e01'
+            label: Text
+            name: 2d9d7e01
+            widget: string
+          - hint: >-
+              Original text: Powerhouse serving of 10,000 MCG Biotin, key:
+              2e54e98d
+            label: Text
+            name: 2e54e98d
+            widget: string
+          - hint: 'Original text: 100% Vegan (For the Animals), key: -1309f747'
+            label: Text
+            name: '-1309f747'
+            widget: string
+          - hint: 'Original text: Gluten-Free for Your Gut, key: 5fa3faa4'
+            label: Text
+            name: 5fa3faa4
+            widget: string
+          - hint: 'Original text: Naturally Strawberry Flavored, key: -7071305c'
+            label: Text
+            name: '-7071305c'
+            widget: string
+          - hint: 'Original text: 2 Gummies. 10,000mcg of Biotin., key: 141fd93'
+            label: Text
+            name: 141fd93
+            widget: string
+          - hint: 'Original text: Maximum Hair Health., key: 477dd134'
+            label: Text
+            name: 477dd134
+            widget: string
+          - hint: "Original text: GET\_UP\_TO 49%\_OFF YOUR\_GUMMIES, key: -26afd7c9"
+            label: Text
+            name: '-26afd7c9'
+            widget: string
+          - hint: >-
+              Original text: 24-hour frizz control? Yes, please. This spirulina
+              protein smoothing spray is the #1 keratin dupe. With just a few
+              heat-activated spritzes, you can transform dull, frizzy blowouts
+              into results that are shiny and smooth AF., key: -38690f35
+            label: Text
+            name: '-38690f35'
+            widget: text
+          - hint: >-
+              Original text: Good Behavior Smoothing Spray also protects against
+              humidity, UV damage, and heat up to 450ºF., key: 1e97f8ab
+            label: Text
+            name: 1e97f8ab
+            widget: text
+          - hint: 'Original text: Subscribe & Save 15%, key: -40e98f12'
+            label: Text
+            name: '-40e98f12'
+            widget: string
+          - hint: 'Original text: FREQUENCY, key: -5e146ac4'
+            label: Text
+            name: '-5e146ac4'
+            widget: string
+          - hint: 'Original text: DELIVERY EVERY 30 DAYS, key: -4f578b17'
+            label: Text
+            name: '-4f578b17'
+            widget: string
+          - hint: 'Original text: DELIVERY EVERY 60 DAYS, key: 4f5b26ac'
+            label: Text
+            name: 4f5b26ac
+            widget: string
+          - hint: 'Original text: DELIVERY EVERY 90 DAYS, key: -11f22791'
+            label: Text
+            name: '-11f22791'
+            widget: string
+          - hint: 'Original text: Third choice, key: 1b66029a'
+            label: Text
+            name: 1b66029a
+            widget: string
+          - hint: >-
+              Original text: Pay in 4 interest-free installments with afterpay.,
+              key: 24256a0e
+            label: Text
+            name: 24256a0e
+            widget: string
+          - hint: >-
+              Original text: Thank you! Your submission has been received!, key:
+              5a0ea5a1
+            label: Text
+            name: 5a0ea5a1
+            widget: string
+          - hint: >-
+              Original text: Oops! Something went wrong while submitting the
+              form., key: -7c112e99
+            label: Text
+            name: '-7c112e99'
+            widget: string
+          - hint: 'Original text: SIZE: Travel, key: -7855bb1f'
+            label: Text
+            name: '-7855bb1f'
+            widget: string
+          - hint: 'Original text: GIFT #2: Good Behaviour, key: -7932a2e1'
+            label: Text
+            name: '-7932a2e1'
+            widget: string
+          - hint: 'Original text: 4 IN 1 PREP SPRAY, key: -7c51d0a8'
+            label: Text
+            name: '-7c51d0a8'
+            widget: string
+          - hint: 'Original text: AS SEEN IN..., key: 2d5049f2'
+            label: Text
+            name: 2d5049f2
+            widget: string
+          - hint: >-
+              Original text: COMPLETE YOUR Good Behavior ROUTINE WITH:, key:
+              -5d83139
+            label: Text
+            name: '-5d83139'
+            widget: string
+          - hint: >-
+              Original text: GOOD BEHAVIOR ULTRA SMOOTH CONDITIONER, key:
+              1c9713f5
+            label: Text
+            name: 1c9713f5
+            widget: string
+          - hint: 'Original text: GOOD BEHAVIOR ULTRA SMOOTH SHAMPOO, key: 407c0dc'
+            label: Text
+            name: 407c0dc
+            widget: string
+          - hint: 'Original text: GOOD BEHAVIOR BLOWOUT BALM, key: 7d1fd14f'
+            label: Text
+            name: 7d1fd14f
+            widget: string
+          - hint: >-
+              Original text: PURCHASE THE COMPLETE ROUTINE AND SAVE 20%, key:
+              -3ce6479e
+            label: Text
+            name: '-3ce6479e'
+            widget: string
+          - hint: 'Original text: BUNDLE PRICE:, key: 7ae6f98f'
+            label: Text
+            name: 7ae6f98f
+            widget: string
+          - hint: 'Original text: $87.90, key: 409d4ec2'
+            label: Text
+            name: 409d4ec2
+            widget: string
+          - hint: 'Original text: $67.90, key: 40811fc0'
+            label: Text
+            name: 40811fc0
+            widget: string
+          - hint: 'Original text: SHOP THE BUNDLE, key: 34502a9b'
+            label: Text
+            name: 34502a9b
+            widget: string
+          - hint: 'Original text: LEAPING BUNNY CERTIFIED, key: -39a8fa39'
+            label: Text
+            name: '-39a8fa39'
+            widget: string
+          - hint: 'Original text: NATURAL, key: -6e275bf7'
+            label: Text
+            name: '-6e275bf7'
+            widget: string
+          - hint: >-
+              Original text: Sleek, Frizz-Free Results in 3 Simple Steps, key:
+              5ebfbb79
+            label: Text
+            name: 5ebfbb79
+            widget: string
+          - hint: "Original text: Spray onto damp hair in sections.\L , key: -4d90e692"
+            label: Text
+            name: '-4d90e692'
+            widget: string
+          - hint: 'Original text: 2, key: 32'
+            label: Text
+            name: '32'
+            widget: string
+          - hint: "Original text: Comb through, ensuring every strand is thoroughly coated from root to tip.\_\L Blow-dry in sections to activate the treatment., key: -2b2837ed"
+            label: Text
+            name: '-2b2837ed'
+            widget: text
+          - hint: 'Original text: 3, key: 33'
+            label: Text
+            name: '33'
+            widget: string
+          - hint: >-
+              Original text: Blow-dry in sections to activate the treatment.,
+              key: -291cd56c
+            label: Text
+            name: '-291cd56c'
+            widget: string
+          - hint: 'Original text: ADD TO BAG, key: 312a6942'
+            label: Text
+            name: 312a6942
+            widget: string
+          - hint: 'Original text: YOU DESERVE GOOD HAIR DAYS, key: -7190bd3b'
+            label: Text
+            name: '-7190bd3b'
+            widget: string
+          - hint: 'Original text: Shiny, Sleek Results, key: -791673cb'
+            label: Text
+            name: '-791673cb'
+            widget: string
+          - hint: 'Original text: UV Protection, key: 762a05d8'
+            label: Text
+            name: 762a05d8
+            widget: string
+          - hint: 'Original text: 450ºF Heat Protection, key: 138871c4'
+            label: Text
+            name: 138871c4
+            widget: string
+          - hint: 'Original text: For The Girlies That Can’t Be Tamed, key: -71f618db'
+            label: Text
+            name: '-71f618db'
+            widget: string
+          - hint: >-
+              Original text: Expect gorgeous, smooth, shiny hair for a full 24
+              hours thanks to spirulina protein and bonding polymers. These two
+              ingredients fight frizz and give hair the same sleek appearance as
+              a fresh keratin treatment., key: -44a30bd4
+            label: Text
+            name: '-44a30bd4'
+            widget: text
+          - hint: >-
+              Original text: Can I use Good Behavior on dry hair?, key:
+              -3d7853ce
+            label: Text
+            name: '-3d7853ce'
+            widget: string
+          - hint: >-
+              Original text: For best results, use Good Behavior Smoothing Spray
+              on damp hair, style, then reapply as needed for touch-ups. The
+              formula is heat-activated and needs to be applied prior to heat
+              styling., key: -4d9e0091
+            label: Text
+            name: '-4d9e0091'
+            widget: text
+          - hint: >-
+              Original text: Is Good Behavior safe for color treated hair?, key:
+              -795ff0f0
+            label: Text
+            name: '-795ff0f0'
+            widget: string
+          - hint: >-
+              Original text: Yes! You can use Good Behavior on colored or
+              chemically treated hair., key: 51c9a5bd
+            label: Text
+            name: 51c9a5bd
+            widget: string
+          - hint: >-
+              Original text: I have really curly hair, will Good Behavior work
+              for me?, key: -bd03303
+            label: Text
+            name: '-bd03303'
+            widget: string
+          - hint: >-
+              Original text: Yes! Good Behavior is great for all hair types,
+              from straight to tightly coiled. The formula is heat-activated and
+              will work on whatever your styling method of choice is—including
+              diffusing., key: 6dd03eab
+            label: Text
+            name: 6dd03eab
+            widget: text
+          - hint: >-
+              Original text: I have fine, thin hair, will Good Behavior be too
+              heavy?, key: -4b34356a
+            label: Text
+            name: '-4b34356a'
+            widget: string
+          - hint: >-
+              Original text: No! Good Behavior is suitable for all hair types
+              and will not weigh down hair if used as directed., key: 39b0e44d
+            label: Text
+            name: 39b0e44d
+            widget: text
+          - hint: 'Original text: Is this product vegan?, key: -54241ea9'
+            label: Text
+            name: '-54241ea9'
+            widget: string
+          - hint: >-
+              Original text: Yes! All IGK products are vegan and Leaping Bunny
+              certified., key: 7a4e151b
+            label: Text
+            name: 7a4e151b
+            widget: string
+      - label: Links
+        name: links
+        file: cms/_data/links.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Links
+          - hint: 'Original link: #biotin, key: -174f1f8c'
+            label: Link
+            name: '-174f1f8c'
+            widget: string
+          - hint: >-
+              Original link:
+              https://www.igkhair.com/tools/recurring/checkout_link?magic=eyJpdGVtcyI6IFt7ImlkIjogNDE0MzY1MDIzOTI4NzYsICJxdWFudGl0eSI6IDEsICJzZWxsaW5nX3BsYW4iOiA3Nzg2MDA0OTIsICJzZWxsaW5nX3BsYW5fZ3JvdXBfaWQiOiAxNjk5MDMwfV19&store_id=147823,
+              key: 71bc0a7a
+            label: Link
+            name: 71bc0a7a
+            widget: string
+          - hint: >-
+              Original link:
+              https://www.igkhair.com/tools/recurring/checkout_link?magic=eyJpdGVtcyI6IFt7ImlkIjogNDE0MzY1MDQ0NTcyNjAsICJxdWFudGl0eSI6IDEsICJzZWxsaW5nX3BsYW4iOiA3NzgzNzExMTYsICJzZWxsaW5nX3BsYW5fZ3JvdXBfaWQiOiAxNjk4OTkwfV19&store_id=147823,
+              key: 649e517e
+            label: Link
+            name: 649e517e
+            widget: string
+          - hint: >-
+              Original link:
+              https://www.igkhair.com/tools/recurring/checkout_link?magic=eyJpdGVtcyI6IFt7ImlkIjogNDE0MzY1MDk3MDAxNDAsICJxdWFudGl0eSI6IDEsICJzZWxsaW5nX3BsYW4iOiA3NzgzMzgzNDgsICJzZWxsaW5nX3BsYW5fZ3JvdXBfaWQiOiAxNjk4OTg5fV19&store_id=147823,
+              key: -48690009
+            label: Link
+            name: '-48690009'
+            widget: string
+          - hint: >-
+              Original link: https://igkhair.com/cart/41436502392876:1, key:
+              76136692
+            label: Link
+            name: '76136692'
+            widget: string
+          - hint: >-
+              Original link: https://igkhair.com/cart/41436504457260:1, key:
+              3b17a79f
+            label: Link
+            name: 3b17a79f
+            widget: string
+          - hint: >-
+              Original link: https://igkhair.com/cart/41436509700140:1, key:
+              43914464
+            label: Link
+            name: '43914464'
+            widget: string
+          - hint: >-
+              Original link: https://www.igkhair.com/pages/terms-conditions,
+              key: 1ac14e1c
+            label: Link
+            name: 1ac14e1c
+            widget: string
+          - hint: >-
+              Original link: https://www.igkhair.com/pages/privacy, key:
+              4f37626a
+            label: Link
+            name: 4f37626a
+            widget: string
+          - hint: >-
+              Original link: https://www.igkhair.com/pages/shipping-information,
+              key: -21f3015
+            label: Link
+            name: '-21f3015'
+            widget: string
+          - hint: 'Original link: #hairmask, key: 3db832f1'
+            label: Link
+            name: 3db832f1
+            widget: string
+          - hint: >-
+              Original link:
+              https://www.igkhair.com/tools/recurring/checkout_link?magic=eyJpdGVtcyI6IFt7ImlkIjogNDE1Mzg1OTAzNDMyMTIsICJxdWFudGl0eSI6IDEsICJzZWxsaW5nX3BsYW4iOiA4MDE2NjkxNjQsICJzZWxsaW5nX3BsYW5fZ3JvdXBfaWQiOiAxNzYxNzE4fV19&store_id=147823,
+              key: 2d1c61bf
+            label: Link
+            name: 2d1c61bf
+            widget: string
+          - hint: >-
+              Original link:
+              https://www.igkhair.com/tools/recurring/checkout_link?magic=eyJpdGVtcyI6IFt7ImlkIjogNDE1Mzg1OTE3MTk0NjgsICJxdWFudGl0eSI6IDEsICJzZWxsaW5nX3BsYW4iOiA4MDE3MDE5MzIsICJzZWxsaW5nX3BsYW5fZ3JvdXBfaWQiOiAxNzYxNzIwfV19&store_id=147823,
+              key: -1a057254
+            label: Link
+            name: '-1a057254'
+            widget: string
+          - hint: >-
+              Original link:
+              https://www.igkhair.com/tools/recurring/checkout_link?magic=eyJpdGVtcyI6IFt7ImlkIjogNDE1Mzg1OTUxOTI4NzYsICJxdWFudGl0eSI6IDEsICJzZWxsaW5nX3BsYW4iOiA4MDE3MzQ3MDAsICJzZWxsaW5nX3BsYW5fZ3JvdXBfaWQiOiAxNzYxNzIxfV19&store_id=147823,
+              key: -337dbf22
+            label: Link
+            name: '-337dbf22'
+            widget: string
+          - hint: >-
+              Original link: https://igkhair.com/cart/41538590343212:1, key:
+              -31c10ee6
+            label: Link
+            name: '-31c10ee6'
+            widget: string
+          - hint: >-
+              Original link: https://igkhair.com/cart/41538591719468:1, key:
+              6db100f1
+            label: Link
+            name: 6db100f1
+            widget: string
+          - hint: >-
+              Original link: https://igkhair.com/cart/41538595192876:1, key:
+              -150b97b5
+            label: Link
+            name: '-150b97b5'
+            widget: string
+          - hint: 'Original link: #smooth, key: 5eb8f91'
+            label: Link
+            name: 5eb8f91
+            widget: string
+          - hint: >-
+              Original link:
+              https://www.igkhair.com/tools/recurring/checkout_link?magic=eyJpdGVtcyI6IFt7ImlkIjogNDE1Mzg1NjI5NDkxNjQsICJxdWFudGl0eSI6IDEsICJzZWxsaW5nX3BsYW4iOiA4MDE5MzEzMDgsICJzZWxsaW5nX3BsYW5fZ3JvdXBfaWQiOiAxNzYxNzI3fV19&store_id=147823,
+              key: -1b8df60d
+            label: Link
+            name: '-1b8df60d'
+            widget: string
+          - hint: >-
+              Original link:
+              https://www.igkhair.com/tools/recurring/checkout_link?magic=eyJpdGVtcyI6IFt7ImlkIjogNDE1Mzg1Njg1NTI0OTIsICJxdWFudGl0eSI6IDEsICJzZWxsaW5nX3BsYW4iOiA4MDE4NjU3NzIsICJzZWxsaW5nX3BsYW5fZ3JvdXBfaWQiOiAxNzYxNzMyfV19&store_id=147823,
+              key: -74025dc8
+            label: Link
+            name: '-74025dc8'
+            widget: string
+          - hint: >-
+              Original link:
+              https://www.igkhair.com/tools/recurring/checkout_link?magic=eyJpdGVtcyI6IFt7ImlkIjogNDE1Mzg1Njk2MDEwNjgsICJxdWFudGl0eSI6IDEsICJzZWxsaW5nX3BsYW4iOiA4MDE5OTY4NDQsICJzZWxsaW5nX3BsYW5fZ3JvdXBfaWQiOiAxNzYxNzI4fV19&store_id=147823,
+              key: 7c510132
+            label: Link
+            name: 7c510132
+            widget: string
+          - hint: >-
+              Original link: https://igkhair.com/cart/41538562949164:1, key:
+              -6c9c2d71
+            label: Link
+            name: '-6c9c2d71'
+            widget: string
+          - hint: >-
+              Original link: https://igkhair.com/cart/41538568552492:1, key:
+              -69665be1
+            label: Link
+            name: '-69665be1'
+            widget: string
+          - hint: >-
+              Original link: https://igkhair.com/cart/41538569601068:1, key:
+              -77ae6580
+            label: Link
+            name: '-77ae6580'
+            widget: string
+          - hint: 'Original link: #gifts, key: 41965b00'
+            label: Link
+            name: 41965b00
+            widget: string
+          - hint: 'Original link: #, key: 23'
+            label: Link
+            name: '23'
+            widget: string
+      - label: Images
+        name: images
+        file: cms/_data/images.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Images
+          - label: Image
+            name: i5bd321fd
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 6a7e7cc4
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4167aa6f
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 5490ad8c
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i5c4d1673
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '28515737'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 5174fb9a
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4dbec75b
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i4506df65
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i71999c8c
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i10b028a4
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i162f153a
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 7b703e5e
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 3b1b1c4d
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i53a9bdc
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i78980e9e
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 5fb722cd
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 6601cd9c
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i3906fe81
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 5c2b10ab
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 52a64428
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i7247173c
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i2184e968
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i638df074
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i63aa1f76
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i637fd8f3
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i639c07f5
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i6371c172
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i67775002
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i6363a9f1
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i329114c1
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4a2d9910
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i5d18dd4e
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 3fd8964d
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 7bf1cbb0
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 7bffe331
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 7c0dfab2
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 7c1c1233
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 15c3a702
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i44f0a563
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i65188290
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i383217a
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i37509f9
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i366f278
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-186085'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '2028748'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 27762bb4
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-ce4c52'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-6c89dd51'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-116ee089'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4a40931b
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-3cf6fe35'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 5bca2fa0
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-54865e9'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 7f60d4f2
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 3a43abae
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-7247d0d7'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 39cb3025
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-c51d8e5'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 1fc6c2f6
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-6c1f00ed'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-2248b143'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-50919740'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-36ff1ebc'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 23b352cb
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-7d467802'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4e2f8452
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 442d2584
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-54ceb655'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-5b470af1'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-7cd34d4f'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-7c10c629'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 6f69c811
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 238a8d9c
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 303a665e
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 16b7b996
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-14b6e02b'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 1d5f9a38
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '14950e46'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 6cb4b984
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 66ef42c0
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 670b71c2
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 6727a0c4
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-6942c1c3'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-2a11ea9b'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 612ec6c2
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-31105b1e'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-31495d1d'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-8c07f1b'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 1fc85ee7
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-6b90827c'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 5e22399b
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 1063cc61
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-42d8fc67'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 2d942b
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-2e2d86ef'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 3c73996f
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-2e999c4f'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 66592df3
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-4b407cb'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: b011fe2
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 3389fde4
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 31b857bf
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 2331bd39
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 233fd4ba
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 234dec3b
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-a49f711'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-1a6268f'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-595b275c'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-3d9ce50e'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 347140fc
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 347f587d
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-76ac82fd'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 67ad00b3
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 1a161355
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 38a80c23
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 10b682af
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '37708043'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-fa8b519'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 7a5ad428
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 7d9e6dc6
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-348b503a'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 16b42822
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-1b203e54'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-6fe53adb'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-66dd331b'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 48bfda7
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-5869fb0e'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 69b14d96
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-4077d605'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-5a2a1c3'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 75af61ea
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 44c2c0b6
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-72ac7024'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '65178e60'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-3f3b11f2'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 5c0da570
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 58a3f9a4
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+publish_mode: editorial_workflow

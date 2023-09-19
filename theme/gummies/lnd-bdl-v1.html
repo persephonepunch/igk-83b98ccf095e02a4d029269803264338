@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html data-wf-page="6509ce5ac353ef0564c7aacf" data-wf-site="6509ce5ac353ef0564c7aad1"><head><link rel="preconnect" crossorigin="true" href="https://assets.website-files.com">{%- seo seo -%}
+  <meta charset="utf-8">
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  
+  <link href="/assets/css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="/assets/css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="/assets/css/igk-83b98ccf095e02a4d029269803264338.webflow.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="{{ settings.site.favicon | default: "/assets/images/favicon.png" }}" rel="shortcut icon" type="image/x-icon">
+  <link href="{{ settings.site.apple_touch_icon | default: "/assets/images/webclip.jpg" }}" rel="apple-touch-icon">
+  <script>
+(function(nonVWOScriptsToExecute, VWO_HARD_TIMEOUT) {
+  window._vwo_evq = window._vwo_evq || [];
+  var queue = window._vwo_evq;
+  for (var i = 0; i < queue.length; i++) {
+    if (queue[i][0] === 'rD') {
+      window.willRedirectionOccur = true;
+      break;
+    }
+  }
+  var _vwoOldPush = window._vwo_evq.push;
+  window._vwo_evq.push = function() {
+    var eventData = arguments[0],
+      willRedirectionOccur;
+    if (eventData[0] === 'rD') {
+      willRedirectionOccur = eventData[1];
+      // It will be set to true if a redirection is going to be done by VWO.
+      window.willRedirectionOccurByVWO = willRedirectionOccur;
+    }
+    _vwoOldPush.apply(window._vwo_evq, [].slice.call(arguments));
+  };
+  var hardLimitTimedout = false;
+  function tryNonVWOTracking(nonVWOScriptsToExecute) {
+    if ((window._vwo_code && (window._vwo_code.finished() || window._vwo_code.libExecuted)) || hardLimitTimedout) {
+      if (!window.willRedirectionOccurByVWO) {
+        clearTimeout(hardLimitTimer);
+        for (var i = 0; i < nonVWOScriptsToExecute.length; i++) {
+          try {
+            nonVWOScriptsToExecute[i]();
+          } catch (e) {}
+        }
+        return;
+      }
+    }
+    setTimeout(function() {
+      tryNonVWOTracking(nonVWOScriptsToExecute)
+    }, 500)
+  }
+  var hardLimitTimer = setTimeout(function() {
+    hardLimitTimedout = true;
+  }, VWO_HARD_TIMEOUT);
+  tryNonVWOTracking(nonVWOScriptsToExecute);
+})([function() {
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N3V559J');
+}], 5000 /*MAXIMUM TIME IN SECONDS IN WHICH GA CODE WILL EXECUTE ANYWAY*/ );
+</script>
+  <!--  Start VWO Async SmartCode  -->
+  <script type="text/javascript" id="vwoCode">
+window._vwo_code=window._vwo_code || (function() {
+var account_id=667567,
+version = 1.5,
+settings_tolerance=2000,
+library_tolerance=2500,
+use_existing_jquery=false,
+is_spa=1,
+hide_element='body',
+hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important',
+/* DO NOT EDIT BELOW THIS LINE */
+f=false,d=document,vwoCodeEl=d.querySelector('#vwoCode'),code={use_existing_jquery:function(){return use_existing_jquery},library_tolerance:function(){return library_tolerance},hide_element_style:function(){return'{'+hide_element_style+'}'},finish:function(){if(!f){f=true;var e=d.getElementById('_vis_opt_path_hides');if(e)e.parentNode.removeChild(e)}},finished:function(){return f},load:function(e){var t=d.createElement('script');t.fetchPriority='high';t.src=e;t.type='text/javascript';t.onerror=function(){_vwo_code.finish()};d.getElementsByTagName('head')[0].appendChild(t)},getVersion:function(){return version},getMatchedCookies:function(e){var t=[];if(document.cookie){t=document.cookie.match(e)||[]}return t},getCombinationCookie:function(){var e=code.getMatchedCookies(/(?:^|;)\s?(_vis_opt_exp_\d+_combi=[^;$]*)/gi);e=e.map(function(e){try{var t=decodeURIComponent(e);if(!/_vis_opt_exp_\d+_combi=(?:\d+,?)+\s*$/.test(t)){return''}return t}catch(e){return''}});var i=[];e.forEach(function(e){var t=e.match(/([\d,]+)/g);t&&i.push(t.join('-'))});return i.join('|')},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;window.settings_timer=setTimeout(function(){_vwo_code.finish()},settings_tolerance);var e=d.createElement('style'),t=hide_element?hide_element+'{'+hide_element_style+'}':'',i=d.getElementsByTagName('head')[0];e.setAttribute('id','_vis_opt_path_hides');vwoCodeEl&&e.setAttribute('nonce',vwoCodeEl.nonce);e.setAttribute('type','text/css');if(e.styleSheet)e.styleSheet.cssText=t;else e.appendChild(d.createTextNode(t));i.appendChild(e);var n=this.getCombinationCookie();this.load('https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&f='+ +is_spa+'&vn='+version+(n?'&c='+n:''));return settings_timer}};window._vwo_settings_timer = code.init();return code;}());
+</script>
+  <!--  End VWO Async SmartCode  -->
+{{ settings.site.header_additional_content }}{%- include "partials/_site-css-variables" -%}<style>.w-video.w-embed {
+            aspect-ratio: 16 / 9;
+        }</style></head>
+<body class="body">
+  <section data-w-id="3f3d490b-24be-11f0-216d-e0fd86a7f455" class="desktop-top">
+    <div class="w-layout-blockcontainer maincontainer w-container">
+      <div class="header-top_content"><img src="{{ images.-186085.url }}" loading="lazy" alt="{{ images.-186085.alt | trim | escape }}" class="logo mobileoff">
+        <a href="{{ links.41965b00 }}" class="buttonsmall w-button">{{ texts.1a42520c }}</a>
+      </div>
+    </div>
+  </section>
+  <section class="top">
+    <div class="w-layout-blockcontainer maincontainer w-container">
+      <div class="w-layout-vflex top_content">
+        <p class="top_content_text">{{ texts.2a651677 }}</p>
+      </div>
+    </div>
+  </section>
+  <section class="mobiletop">
+    <div class="w-layout-blockcontainer maincontainer w-container">
+      <div class="mobiletop_content"><img src="{{ images.-186085.url }}" loading="lazy" alt="{{ images.-186085.alt | trim | escape }}" class="logo">
+        <a href="{{ links.41965b00 }}" class="buttonsmall w-button">{{ texts.1a42520c }}</a>
+      </div>
+    </div>
+  </section>
+  <section class="headergift">
+    <div class="w-layout-blockcontainer maincontainer w-container">
+      <div class="header_content"><img src="{{ images.-186085.url }}" loading="lazy" alt="{{ images.-186085.alt | trim | escape }}" class="logo mobileoff">
+        <div class="header_content_copy-v2"><img src="{{ images.2028748.url }}" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 94vw, 100vw" alt="{{ images.2028748.alt | trim | escape }}" class="header_content_copy_image">
+          <div class="header_content_copy_top">
+            <h4 class="heading4">{{ texts.7ea1b009 }}</h4>
+            <div class="header_content_copy_top_purple">
+              <h4 class="heading4">{{ texts.147ccd }}</h4>
+            </div>
+          </div>
+          <h4 class="heading4 mobileonly">{{ texts.-44b290c1 }}<span class="heading4_purple">{{ texts.-4a654b74 }}</span>{{ texts.-17cd7a97 }}</h4>
+          <h3 class="heading3">{{ texts.-76bb73f0 }}</h3>
+          <h1 class="heading1">{{ texts.-76380d46 }}</h1>
+          <a href="{{ links.41965b00 }}" class="button w-button">{{ texts.ee6ff2b }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="logos">
+    <div class="w-layout-blockcontainer maincontainer w-container">
+      <div class="logos_content">
+        <p class="logos_content_text">{{ texts.-44bcac4e }}</p>
+        <div id="w-node-_06b951db-6fb7-757a-3ccb-bf343277338f-64c7aacf" class="w-layout-layout logos_content_columns wf-layout-layout">
+          <div id="w-node-_06b951db-6fb7-757a-3ccb-bf3432773390-64c7aacf" class="w-layout-cell logos_content_columns_cell"><img src="{{ images.-116ee089.url }}" loading="lazy" alt="{{ images.-116ee089.alt | trim | escape }}"></div>
+          <div id="w-node-_06b951db-6fb7-757a-3ccb-bf3432773391-64c7aacf" class="w-layout-cell logos_content_columns_cell"><img src="{{ images.4a40931b.url }}" loading="lazy" alt="{{ images.4a40931b.alt | trim | escape }}"></div>
+          <div id="w-node-_76e1fb3b-3b7e-7a40-7358-51d4bbde42e8-64c7aacf" class="w-layout-cell logos_content_columns_cell"><img src="{{ images.-3cf6fe35.url }}" loading="lazy" alt="{{ images.-3cf6fe35.alt | trim | escape }}"></div>
+          <div id="w-node-_899cbb5a-62bd-80c7-8dbd-574ae4ae529b-64c7aacf" class="w-layout-cell logos_content_columns_cell"><img src="{{ images.5bca2fa0.url }}" loading="lazy" alt="{{ images.5bca2fa0.alt | trim | escape }}"></div>
+          <div id="w-node-b8765fc9-0e9f-80c9-9eab-dc34bb31ba48-64c7aacf" class="w-layout-cell logos_content_columns_cell"><img src="{{ images.-54865e9.url }}" loading="lazy" alt="{{ images.-54865e9.alt | trim | escape }}"></div>
+          <div id="w-node-_71aaf5d4-0aa2-5270-b967-7e0826d14096-64c7aacf" class="w-layout-cell logos_content_columns_cell"><img src="{{ images.7f60d4f2.url }}" loading="lazy" alt="{{ images.7f60d4f2.alt | trim | escape }}"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="benefit v2">
+    <div class="w-layout-blockcontainer maincontainer w-container">
+      <div class="benefit_content">
+        <h2 class="heading2">{{ texts.-4f4465b }}</h2><img src="{{ images.5e22399b.url }}" loading="lazy" sizes="(max-width: 479px) 93vw, (max-width: 767px) 92vw, 94vw" alt="{{ images.5e22399b.alt | trim | escape }}">
+      </div>
+    </div>
+  </section>
+  <div class="marquee-wrap">
+    <section class="logos-banner">
+      <div class="logos-testimonial_logos_carousel_elements">
+        <div class="marquee_item"><img src="{{ images.1063cc61.url }}" loading="lazy" alt="{{ images.1063cc61.alt | trim | escape }}">
+          <p class="marquee_item_text">{{ texts.-151d4b41 }}</p>
+        </div>
+        <div class="marquee_item"><img src="{{ images.-42d8fc67.url }}" loading="lazy" alt="{{ images.-42d8fc67.alt | trim | escape }}">
+          <p class="marquee_item_text">{{ texts.71b6f55a }}</p>
+        </div>
+        <div class="marquee_item"><img src="{{ images.2d942b.url }}" loading="lazy" alt="{{ images.2d942b.alt | trim | escape }}">
+          <p class="marquee_item_text">{{ texts.4860592a }}</p>
+        </div>
+        <div class="marquee_item"><img src="{{ images.-2e2d86ef.url }}" loading="lazy" alt="{{ images.-2e2d86ef.alt | trim | escape }}">
+          <p class="marquee_item_text">{{ texts.4dc55a5 }}</p>
+        </div>
+        <div class="marquee_item"><img src="{{ images.1063cc61.url }}" loading="lazy" alt="{{ images.1063cc61.alt | trim | escape }}">
+          <p class="marquee_item_text">{{ texts.-151d4b41 }}</p>
+        </div>
+        <div class="marquee_item"><img src="{{ images.-42d8fc67.url }}" loading="lazy" alt="{{ images.-42d8fc67.alt | trim | escape }}">
+          <p class="marquee_item_text">{{ texts.71b6f55a }}</p>
+        </div>
+        <div class="marquee_item"><img src="{{ images.2d942b.url }}" loading="lazy" alt="{{ images.2d942b.alt | trim | escape }}">
+          <p class="marquee_item_text">{{ texts.4860592a }}</p>
+        </div>
+        <div class="marquee_item"><img src="{{ images.-2e2d86ef.url }}" loading="lazy" alt="{{ images.-2e2d86ef.alt | trim | escape }}">
+          <p class="marquee_item_text">{{ texts.4dc55a5 }}</p>
+        </div>
+        <div class="marquee_item"><img src="{{ images.1063cc61.url }}" loading="lazy" alt="{{ images.1063cc61.alt | trim | escape }}">
+          <p class="marquee_item_text">{{ texts.-151d4b41 }}</p>
+        </div>
+        <div class="marquee_item"><img src="{{ images.-42d8fc67.url }}" loading="lazy" alt="{{ images.-42d8fc67.alt | trim | escape }}">
+          <p class="marquee_item_text">{{ texts.71b6f55a }}</p>
+        </div>
+        <div class="marquee_item"><img src="{{ images.2d942b.url }}" loading="lazy" alt="{{ images.2d942b.alt | trim | escape }}">
+          <p class="marquee_item_text">{{ texts.4860592a }}</p>
+        </div>
+        <div class="marquee_item"><img src="{{ images.-2e2d86ef.url }}" loading="lazy" alt="{{ images.-2e2d86ef.alt | trim | escape }}">
+          <p class="marquee_item_text">{{ texts.4dc55a5 }}</p>
+        </div>
+      </div>
+      <div class="logos-testimonial_logos_right"></div>
+      <div class="logos-testimonial_logos_left"></div>
+    </section>
+  </div>
+  <section class="box v2">
+    <div class="w-layout-blockcontainer maincontainer w-container">
+      <div class="box_content"><img src="{{ images.-2248b143.url }}" loading="lazy" alt="{{ images.-2248b143.alt | trim | escape }}">
+        <p class="box_content_text">{{ texts.64572db7 }}</p>
+        <h2 class="heading2">{{ texts.5289dada }}</h2>
+        <p class="box_content_subheadline">{{ texts.-3f286bf2 }}</p>
+        <div class="box_content_product">
+          <div class="box_content_product_tabs">
+            <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
+              <div class="tabsimage w-tab-menu">
+                <a data-w-tab="Tab 1" class="tab-link-tab-2-2 w-inline-block w-tab-link w--current"><img alt="{{ images.3c73996f.alt | trim | escape }}" loading="lazy" src="{{ images.3c73996f.url }}"></a>
+                <a data-w-tab="Tab 2" class="tab-link-tab-2-2 w-inline-block w-tab-link"><img alt="{{ images.-2e999c4f.alt | trim | escape }}" loading="lazy" src="{{ images.-2e999c4f.url }}"></a>
+                <a data-w-tab="Tab 3" class="tab-link-tab-2-2 w-inline-block w-tab-link"><img alt="{{ images.66592df3.alt | trim | escape }}" loading="lazy" src="{{ images.66592df3.url }}"></a>
+                <a data-w-tab="Tab 4" class="tab-link-tab-2-2 w-inline-block w-tab-link"><img alt="{{ images.-4b407cb.alt | trim | escape }}" loading="lazy" src="{{ images.-4b407cb.url }}"></a>
+              </div>
+              <div class="w-tab-content">
+                <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active"><img alt="{{ images.b011fe2.alt | trim | escape }}" loading="lazy" src="{{ images.b011fe2.url }}" class="box-img-1"><img alt="{{ images.3389fde4.alt | trim | escape }}" loading="lazy" src="{{ images.3389fde4.url }}" class="box-img-3"><img alt="{{ images.31b857bf.alt | trim | escape }}" loading="lazy" src="{{ images.31b857bf.url }}" class="box-img-6"></div>
+                <div data-w-tab="Tab 2" class="w-tab-pane"><img alt="{{ images.2331bd39.alt | trim | escape }}" loading="lazy" src="{{ images.2331bd39.url }}" class="box-img-tab2"></div>
+                <div data-w-tab="Tab 3" class="w-tab-pane"><img alt="{{ images.233fd4ba.alt | trim | escape }}" loading="lazy" src="{{ images.233fd4ba.url }}" class="box-img-tab3"></div>
+                <div data-w-tab="Tab 4" class="w-tab-pane"><img alt="{{ images.234dec3b.alt | trim | escape }}" loading="lazy" src="{{ images.234dec3b.url }}" class="box-img-tab4"></div>
+              </div>
+            </div>
+          </div>
+          <div id="gifts" class="box_content_product_box">
+            <p class="box_content_product_box_top">{{ texts.-7153fb67 }}</p>
+            <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="qty_tabs w-tabs">
+              <div id="ProductQtyTabs" class="tabs_menu w-tab-menu">
+                <a data-w-tab="Tab 1" data-variant-bundle="0" class="tab-link-tab-1-3 w-inline-block w-tab-link w--current">
+                  <div>{{ texts.31 }}</div>
+                </a>
+                <a data-w-tab="Tab 2" data-variant-bundle="1" class="tab-link-tab-2-3 w-inline-block w-tab-link">
+                  <div>{{ texts.58ef71e6 }}</div>
+                  <div class="bundletab_item_popular">
+                    <p class="bundletab_item_popular_text">{{ texts.-6c843ecb }}</p>
+                  </div>
+                </a>
+                <a data-w-tab="Tab 3" data-variant-bundle="2" class="tab-link-tab-2-3 w-inline-block w-tab-link">
+                  <div>{{ texts.5e0dfbc3 }}</div>
+                  <div class="bundletab_item_popular">
+                    <p class="bundletab_item_popular_text">{{ texts.-1c51f4e3 }}</p>
+                  </div>
+                </a>
+              </div>
+              <div class="w-tab-content">
+                <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
+                  <p class="box_content_product_box_quantity">{{ texts.-36d8f51b }}</p>
+                </div>
+                <div data-w-tab="Tab 2" class="w-tab-pane">
+                  <p class="box_content_product_box_quantity">{{ texts.603931eb }}</p>
+                </div>
+                <div data-w-tab="Tab 3" class="w-tab-pane">
+                  <p class="box_content_product_box_quantity">{{ texts.-5f68cf5f }}</p>
+                </div>
+              </div>
+            </div>
+            <div data-current="" data-easing="ease" data-duration-in="300" data-duration-out="100" class="pricetab w-tabs"></div>
+            <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="pricetab w-tabs">
+              <div id="ProductSubTabs" class="pricetab_menu w-tab-menu">
+                <a data-w-tab="Tab 1" data-product-subscription="1" class="pricetab_link1 w-inline-block w-tab-link w--current">
+                  <div class="box_content_product_box_wrap">
+                    <div data-product-subscription="1" class="pricetab_menu_tab1_top">
+                      <div class="pricetab_menu_tab1_top_left">
+                        <p class="pricetab_menu_tab1_top_left_text">{{ texts.-5e20f429 }}</p><img width="20" alt="{{ images.-a49f711.alt | trim | escape }}" src="{{ images.-a49f711.url }}" loading="lazy">
+                      </div>
+                      <div class="pricetab_menu_tab1_top_right1">
+                        <p class="pricetab_menu_tab1_top_left_text">{{ texts.405506ce }}</p>
+                        <p class="pricetab_menu_tab1_top_left_text tag">{{ texts.4057c0e4 }}</p>
+                      </div>
+                      <div class="pricetab_menu_tab1_top_right3">
+                        <p class="pricetab_menu_tab1_top_left_text">{{ texts.40ac4e6b }}</p>
+                        <p class="pricetab_menu_tab1_top_left_text tag">{{ texts.-393601a5 }}</p>
+                      </div>
+                      <div class="pricetab_menu_tab1_top_right6">
+                        <p class="pricetab_menu_tab1_top_left_text">{{ texts.-38c4d027 }}</p>
+                        <p class="pricetab_menu_tab1_top_left_text tag">{{ texts.-37665721 }}</p>
+                      </div>
+                    </div>
+                    <div class="pricetab_menu_tab1_grey">
+                      <div class="pricetab_menu_tab1_top_left">
+                        <p class="pricetab_menu_tab1_top_left_text gray">{{ texts.-5e20f429 }}</p>
+                      </div>
+                      <div class="pricetab_menu_tab1_top_rightgray1">
+                        <p class="pricetab_menu_tab1_top_left_text gray">{{ texts.405506ce }}</p>
+                        <p class="pricetab_menu_tab1_top_left_text tag gray">{{ texts.4057c0e4 }}</p>
+                      </div>
+                      <div class="pricetab_menu_tab1_top_rightgray3">
+                        <p class="pricetab_menu_tab1_top_left_text gray">{{ texts.40ac4e6b }}</p>
+                        <p class="pricetab_menu_tab1_top_left_text tag gray">{{ texts.-393601a5 }}</p>
+                      </div>
+                      <div class="pricetab_menu_tab1_top_rightgray6">
+                        <p class="pricetab_menu_tab1_top_left_text gray">{{ texts.-38c4d027 }}</p>
+                        <p class="pricetab_menu_tab1_top_left_text tag gray">{{ texts.-37665721 }}</p>
+                      </div>
+                    </div>
+                    <div class="pricetab_menu_tab1_list">
+                      <div class="pricetab_menu_tab1_list_item"><img alt="{{ images.-1a6268f.alt | trim | escape }}" loading="lazy" src="{{ images.-1a6268f.url }}">
+                        <p class="pricetab_menu_tab1_list_item_text">{{ texts.-1084f082 }}</p>
+                      </div>
+                      <div class="pricetab_menu_tab1_list_item"><img alt="{{ images.-1a6268f.alt | trim | escape }}" loading="lazy" src="{{ images.-1a6268f.url }}">
+                        <p class="pricetab_menu_tab1_list_item_text">{{ texts.75daf6d6 }}</p>
+                      </div>
+                      <div class="pricetab_menu_tab1_list_item"><img alt="{{ images.-1a6268f.alt | trim | escape }}" loading="lazy" src="{{ images.-1a6268f.url }}">
+                        <p class="pricetab_menu_tab1_list_item_text">{{ texts.5c848a5a }}</p>
+                      </div>
+                      <div class="pricetab_menu_tab1_list_item-gift1"><img alt="{{ images.-1a6268f.alt | trim | escape }}" loading="lazy" src="{{ images.-1a6268f.url }}">
+                        <p class="pricetab_menu_tab1_list_item_text">{{ texts.90e2300 }}</p>
+                      </div>
+                      <div class="pricetab_menu_tab1_list_item-gift2"><img alt="{{ images.-1a6268f.alt | trim | escape }}" loading="lazy" src="{{ images.-1a6268f.url }}">
+                        <p class="pricetab_menu_tab1_list_item_text">{{ texts.3dd43554 }}</p>
+                      </div>
+                      <div class="pricetab_menu_tab1_list_save">
+                        <p class="pricetab_menu_tab1_list_item_text">{{ texts.7cd582b0 }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a data-w-tab="Tab 2" data-product-subscription="0" class="pricetab_tab2 w-inline-block w-tab-link">
+                  <div class="pricetab_menu_tab1_two">
+                    <div class="pricetab_menu_tab1_top_left">
+                      <p class="pricetab_menu_tab1_top_left_text">{{ texts.77ae7c87 }}</p><img alt="{{ images.-a49f711.alt | trim | escape }}" loading="lazy" src="{{ images.-a49f711.url }}">
+                    </div>
+                    <div class="pricetab_menu_tab2_top_1">
+                      <p class="pricetab_menu_tab1_top_left_text">{{ texts.4057c0e4 }}</p>
+                    </div>
+                    <div class="pricetab_menu_tab2_top_2">
+                      <p class="pricetab_menu_tab1_top_left_text">{{ texts.-393601a5 }}</p>
+                    </div>
+                    <div class="pricetab_menu_tab2_top_3">
+                      <p class="pricetab_menu_tab1_top_left_text">{{ texts.-37665721 }}</p>
+                    </div>
+                  </div>
+                  <div data-product-subscription="0" class="pricetab_menu_tab1_twogray">
+                    <div class="pricetab_menu_tab1_top_left">
+                      <p class="pricetab_menu_tab1_top_left_two-text">{{ texts.77ae7c87 }}</p>
+                    </div>
+                    <div class="pricetab_menu_tab2_top_gray1">
+                      <p class="pricetab_menu_tab1_top_left_two-text">{{ texts.4057c0e4 }}</p>
+                    </div>
+                    <div class="pricetab_menu_tab2_top_gray2">
+                      <p class="pricetab_menu_tab1_top_left_two-text">{{ texts.-393601a5 }}</p>
+                    </div>
+                    <div class="pricetab_menu_tab2_top_gray3">
+                      <p class="pricetab_menu_tab1_top_left_two-text">{{ texts.-37665721 }}</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="w-tab-content">
+                <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
+                  <div class="tab-1-empty"></div>
+                </div>
+                <div data-w-tab="Tab 2" class="w-tab-pane">
+                  <div class="tab-1-empty"></div>
+                </div>
+              </div>
+            </div>
+            <a href="{{ links.23 }}" data-atc-btn="btn" class="buttonact w-button">{{ texts.-5b7dc6be }}</a>
+            <div class="box_content_product_box_gift">
+              <p class="box_content_product_box_gift_text_0">{{ texts.64b09fc2 }}</p>
+              <p class="box_content_product_box_gift_text_1">{{ texts.-7997a22d }}</p>
+              <p class="box_content_product_box_gift_text_3">{{ texts.7ecfde99 }}</p>
+            </div>
+            <div class="box_content_product_box_unlock">
+              <div class="box_content_product_box_unlock_1">
+                <div>
+                  <p class="box_content_product_box_unlock_1_top">{{ texts.157b6f8b }}</p>
+                </div>
+                <div class="box_content_product_box_unlock_1_content"><img src="{{ images.-595b275c.url }}" loading="lazy" width="84" alt="{{ images.-595b275c.alt | trim | escape }}" class="img-grey">
+                  <div class="box_content_product_box_unlock_1_content_text">
+                    <p class="box_content_product_box_unlock_1_content_text_maax">{{ texts.-6c1fda8d }}</p>
+                    <p class="box_content_product_box_unlock_1_content_text_fg">{{ texts.68da1920 }}</p>
+                    <p class="box_content_product_box_unlock_1_content_text_fg">{{ texts.5071228f }}<span class="box_content_product_box_unlock_1_content_text_fg_line">{{ texts.405663c7 }}</span>{{ texts.1e3fe8c }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="box_content_product_box_unlock_1_open">
+                <div>
+                  <p class="box_content_product_box_unlock_1_top open">{{ texts.-6f0bc5ea }}</p>
+                </div>
+                <div class="box_content_product_box_unlock_1_content open"><img src="{{ images.-3d9ce50e.url }}" loading="lazy" width="84" alt="{{ images.-3d9ce50e.alt | trim | escape }}" class="img-grey">
+                  <div class="box_content_product_box_unlock_1_content_text">
+                    <p class="box_content_product_box_unlock_1_content_text_maax">{{ texts.-6c1fda8d }}</p>
+                    <p class="box_content_product_box_unlock_1_content_text_fg dark">{{ texts.68da1920 }}</p>
+                    <p class="box_content_product_box_unlock_1_content_text_fg dark">{{ texts.5071228f }}<span class="box_content_product_box_unlock_1_content_text_fg_line">{{ texts.405663c7 }}</span>{{ texts.1e3fe8c }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="box_content_product_box_unlock_2">
+                <div>
+                  <p class="box_content_product_box_unlock_1_top">{{ texts.1a99f968 }}</p>
+                </div>
+                <div class="box_content_product_box_unlock_1_content"><img src="{{ images.347140fc.url }}" loading="lazy" alt="{{ images.347140fc.alt | trim | escape }}" width="84" class="img-grey">
+                  <div class="box_content_product_box_unlock_1_content_text">
+                    <p class="box_content_product_box_unlock_1_content_text_maax">{{ texts.546cfccd }}</p>
+                    <p class="box_content_product_box_unlock_1_content_text_fg">{{ texts.-4cbeb7c }}</p>
+                    <p class="box_content_product_box_unlock_1_content_text_fg">{{ texts.5071228f }}<span class="box_content_product_box_unlock_1_content_text_fg_line">{{ texts.40557b09 }}</span>{{ texts.1e3fe8c }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="box_content_product_box_unlock_2_open">
+                <div>
+                  <p class="box_content_product_box_unlock_1_top open">{{ texts.-59a3d3a }}</p>
+                </div>
+                <div class="box_content_product_box_unlock_1_content open"><img src="{{ images.347f587d.url }}" loading="lazy" width="84" alt="{{ images.347f587d.alt | trim | escape }}" class="img-grey">
+                  <div class="box_content_product_box_unlock_1_content_text">
+                    <p class="box_content_product_box_unlock_1_content_text_maax">{{ texts.546cfccd }}</p>
+                    <p class="box_content_product_box_unlock_1_content_text_fg dark">{{ texts.-4cbeb7c }}</p>
+                    <p class="box_content_product_box_unlock_1_content_text_fg dark">{{ texts.5071228f }}<span class="box_content_product_box_unlock_1_content_text_fg_line">{{ texts.40557b09 }}</span>{{ texts.1e3fe8c }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="everything">
+    <div class="w-layout-blockcontainer maincontainer w-container">
+      <div class="everything_content">
+        <h2 class="heading2 white">{{ texts.-77adcf88 }}</h2>
+        <h2 class="heading2canela white">{{ texts.2d9d7e01 }}</h2>
+        <div class="everything_content_four">
+          <div class="everything_content_four_item"><img src="{{ images.-76ac82fd.url }}" loading="lazy" alt="{{ images.-76ac82fd.alt | trim | escape }}">
+            <p class="box_content_text white">{{ texts.2e54e98d }}</p>
+          </div>
+          <div class="everything_content_four_item"><img src="{{ images.-76ac82fd.url }}" loading="lazy" alt="{{ images.-76ac82fd.alt | trim | escape }}">
+            <p class="box_content_text white">{{ texts.-1309f747 }}</p>
+          </div>
+          <div class="everything_content_four_item"><img src="{{ images.-76ac82fd.url }}" loading="lazy" alt="{{ images.-76ac82fd.alt | trim | escape }}">
+            <p class="box_content_text white">{{ texts.5fa3faa4 }}</p>
+          </div>
+          <div class="everything_content_four_item"><img src="{{ images.-76ac82fd.url }}" loading="lazy" alt="{{ images.-76ac82fd.alt | trim | escape }}">
+            <p class="box_content_text white">{{ texts.-7071305c }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="benefit bundle">
+    <div class="w-layout-blockcontainer maincontainer w-container">
+      <div class="benefit_content">
+        <h2 class="heading2">{{ texts.141fd93 }}</h2>
+        <h2 class="heading2canela">{{ texts.477dd134 }}</h2>
+        <div class="benefits_content_graph">
+          <div class="benefits_content_graph_left">
+            <div class="benefits_content_graph_left_icon up"><img src="{{ images.3a43abae.url }}" loading="lazy" alt="{{ images.3a43abae.alt | trim | escape }}"><img src="{{ images.-7247d0d7.url }}" loading="lazy" alt="{{ images.-7247d0d7.alt | trim | escape }}" class="line">
+              <div>
+                <h5 class="heading5">{{ texts.1b814645 }}<br>{{ texts.-26808647 }}</h5>
+              </div>
+            </div>
+            <div class="benefits_content_graph_left_icon"><img src="{{ images.39cb3025.url }}" loading="lazy" alt="{{ images.39cb3025.alt | trim | escape }}"><img src="{{ images.-7247d0d7.url }}" loading="lazy" alt="{{ images.-7247d0d7.alt | trim | escape }}" class="line">
+              <div>
+                <h5 class="heading5">{{ texts.67912c58 }}<br>{{ texts.77d66b1f }}</h5>
+              </div>
+            </div>
+          </div>
+          <div class="benefits_content_graph_center"><img src="{{ images.-c51d8e5.url }}" loading="lazy" alt="{{ images.-c51d8e5.alt | trim | escape }}"></div>
+          <div class="benefits_content_graph_right">
+            <div class="benefits_content_graph_right_icon up"><img src="{{ images.-7247d0d7.url }}" loading="lazy" alt="{{ images.-7247d0d7.alt | trim | escape }}" class="line"><img src="{{ images.1fc6c2f6.url }}" loading="lazy" alt="{{ images.1fc6c2f6.alt | trim | escape }}">
+              <div>
+                <h5 class="heading5 right">{{ texts.72aefad0 }}<br>{{ texts.-20a4951e }}</h5>
+              </div>
+            </div>
+            <div class="benefits_content_graph_right_icon"><img src="{{ images.-7247d0d7.url }}" loading="lazy" alt="{{ images.-7247d0d7.alt | trim | escape }}" class="line"><img src="{{ images.-6c1f00ed.url }}" loading="lazy" alt="{{ images.-6c1f00ed.alt | trim | escape }}">
+              <div>
+                <h5 class="heading5 right">{{ texts.6e5da2d3 }}<br>{{ texts.-3c0e088c }}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="comparison bundle">
+    <div class="w-layout-blockcontainer maincontainer w-container">
+      <div class="comparison_content">
+        <h2 class="heading2">{{ texts.-27206a1d }}</h2>
+        <h2 class="heading2canela">{{ texts.-260ebe88 }}</h2>
+        <div class="comparison_content_chart">
+          <div class="comparison_content_chart_left">
+            <div class="comparison_content_chart_left_1"></div>
+            <div class="comparison_content_chart_left_2">
+              <p>{{ texts.6508f7d5 }}</p>
+            </div>
+            <div class="comparison_content_chart_left_2">
+              <p>{{ texts.23f9c4da }}</p>
+            </div>
+            <div class="comparison_content_chart_left_2">
+              <p>{{ texts.-16171d27 }}</p>
+            </div>
+            <div class="comparison_content_chart_left_2">
+              <p>{{ texts.24373d67 }}</p>
+            </div>
+            <div class="comparison_content_chart_left_2">
+              <p>{{ texts.-7143c107 }}</p>
+            </div>
+            <div class="comparison_content_chart_left_2">
+              <p>{{ texts.-4fbf20ae }}</p>
+            </div>
+          </div>
+          <div class="comparison_content_chart_center">
+            <div class="comparison_content_chart_left_1 black">
+              <p class="paragraph">{{ texts.-4f826840 }}<br>{{ texts.5c51daab }}</p>
+            </div>
+            <div class="comparison_content_chart_left_2 white bundle">
+              <p>{{ texts.6b37defb }}</p>
+            </div>
+            <div class="comparison_content_chart_left_2 white bundle">
+              <p>{{ texts.4788558e }}</p>
+            </div>
+            <div class="comparison_content_chart_left_2 white image bundle"><img src="{{ images.-54ceb655.url }}" loading="lazy" alt="{{ images.-54ceb655.alt | trim | escape }}"></div>
+            <div class="comparison_content_chart_left_2 white image bundle"><img src="{{ images.-54ceb655.url }}" loading="lazy" alt="{{ images.-54ceb655.alt | trim | escape }}"></div>
+            <div class="comparison_content_chart_left_2 white image bundle"><img src="{{ images.-54ceb655.url }}" loading="lazy" alt="{{ images.-54ceb655.alt | trim | escape }}"></div>
+            <div class="comparison_content_chart_left_2 white bundle">
+              <p>{{ texts.21247be }}</p>
+            </div>
+          </div>
+          <div class="comparison_content_chart_center">
+            <div class="comparison_content_chart_left_1 transparent">
+              <p>{{ texts.-746fa89d }}</p>
+            </div>
+            <div class="comparison_content_chart_left_2 white _50">
+              <p>{{ texts.3b48d4ce }}</p>
+            </div>
+            <div class="comparison_content_chart_left_2 white _50">
+              <p>{{ texts.-122b0948 }}</p>
+            </div>
+            <div class="comparison_content_chart_left_2 white image _50"><img src="{{ images.-5b470af1.url }}" loading="lazy" alt="{{ images.-5b470af1.alt | trim | escape }}"></div>
+            <div class="comparison_content_chart_left_2 white image _50"><img src="{{ images.-5b470af1.url }}" loading="lazy" alt="{{ images.-5b470af1.alt | trim | escape }}"></div>
+            <div class="comparison_content_chart_left_2 white image _50"><img src="{{ images.-5b470af1.url }}" loading="lazy" alt="{{ images.-5b470af1.alt | trim | escape }}"></div>
+            <div class="comparison_content_chart_left_2 white _50">
+              <p>{{ texts.8d5d }}</p>
+            </div>
+          </div>
+        </div>
+        <a href="{{ links.41965b00 }}" class="button w-button">{{ texts.ee6ff2b }}</a>
+      </div>
+    </div>
+  </section>
+  <section class="experts dark">
+    <div class="w-layout-blockcontainer maincontainer w-container">
+      <div class="experts_content">
+        <h2 class="heading2 _70 white">{{ texts.-45a0f0f }}</h2>
+        <p class="experts_content_column_tab_text white">{{ texts.-6b1be9a5 }}</p>
+        <p class="experts_content_column_tab_text bold white">{{ texts.-10658d87 }}</p><img src="{{ images.-7cd34d4f.url }}" loading="lazy" sizes="100vw" alt="{{ images.-7cd34d4f.alt | trim | escape }}">
+        <div class="experts_content_divider"></div>
+      </div>
+    </div>
+  </section>
+  <section class="faq">
+    <div class="w-layout-blockcontainer maincontainer w-container">
+      <div class="faq_content">
+        <h2 class="heading2 _70">{{ texts.-683ac04e }}</h2>
+        <div class="faq_content_wrap head">
+          <h1 class="heading4 q">{{ texts.-1f497c }}</h1>
+          <p>{{ texts.4ffe1964 }}</p>
+          <div class="faq_content_wrap_divider"></div>
+        </div>
+        <div class="faq_content_wrap">
+          <h1 class="heading4 q">{{ texts.5b478efc }}</h1>
+          <p>{{ texts.606a055e }}</p>
+          <div class="faq_content_wrap_divider"></div>
+        </div>
+        <div class="faq_content_wrap">
+          <h1 class="heading4 q">{{ texts.77a18754 }}</h1>
+          <p>{{ texts.4997e379 }}</p>
+          <div class="faq_content_wrap_divider"></div>
+        </div>
+        <div class="faq_content_wrap">
+          <h1 class="heading4 q">{{ texts.-47742267 }}</h1>
+          <p>{{ texts.1789ba22 }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="final bundle">
+    <div class="w-layout-blockcontainer maincontainer w-container">
+      <div class="final_content">
+        <div class="final_content_right">
+          <h1 class="final_content_right_headline">{{ texts.-5dfff0c4 }}</h1>
+          <div class="final_content_right_description">
+            <p>{{ texts.7e6bc1f2 }}</p>
+            <p>{{ texts.-48893e9a }}</p>
+          </div>
+          <a href="{{ links.41965b00 }}" class="link-block w-inline-block">
+            <div class="roundbutton toppad">
+              <p class="ingredient_content_right_text">{{ texts.-6fb5eb6a }}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="footer">
+    <div class="w-layout-blockcontainer maincontainer w-container">
+      <div class="footer_content"><img src="{{ images.-7c10c629.url }}" loading="lazy" alt="{{ images.-7c10c629.alt | trim | escape }}">
+        <div class="footer_content_links">
+          <a href="{{ links.1ac14e1c }}" target="_blank" class="footer_content_links_block w-inline-block">
+            <p class="footer_link">{{ texts.-3e157255 }}</p>
+          </a>
+          <a href="{{ links.4f37626a }}" target="_blank" class="footer_content_links_block w-inline-block">
+            <p class="footer_link">{{ texts.-3fbde6f6 }}</p>
+          </a>
+          <a href="{{ links.-21f3015 }}" target="_blank" class="footer_content_links_block w-inline-block">
+            <p class="footer_link">{{ texts.-16341509 }}</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section data-w-id="d584300c-335d-a583-0ba3-40dc3a088da1" class="mobile-top">
+    <div class="w-layout-blockcontainer maincontainer w-container">
+      <div class="mobile-top_content">
+        <h5 class="heading5">{{ texts.-61ad4792 }}</h5>
+        <a href="{{ links.41965b00 }}" class="button mobile w-button">{{ texts.1a42520c }}</a>
+      </div>
+    </div>
+  </section>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js" type="text/javascript" crossorigin="anonymous"></script>
+  <script src="/assets/js/webflow.js" type="text/javascript"></script><!--  dataLayer events  -->
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  if (!document.cookie.split("; ").find((el) => el.startsWith("IGK-firstLand="))) {
+    const date = new Date();
+    date.setTime(date.getTime() + (7*24*60*60*1000));
+    let exp = "; expires="+ date.toUTCString();
+    document.cookie = "IGK-firstLand=true; domain=iigkhair.com" + exp;
+    window.dataLayer.push({event: 'landing_page'});
+  }
+  if (window.location.pathname.includes('lnd')) {
+    window.dataLayer.push({event: 'lander_viewed'});
+  } else if (window.location.pathname.includes('prl')) {
+    window.dataLayer.push({event: 'prelander_viewed'});
+  }
+</script>
+  <script>
+// Get query String
+  function parse_query_string(query) {
+  var vars = query.split("&");
+  var query_string = {};
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split("=");
+    var key = decodeURIComponent(pair[0]);
+    var value = decodeURIComponent(pair[1]);
+    // If first entry with this name
+    if (typeof query_string[key] === "undefined") {
+      query_string[key] = decodeURIComponent(value);
+      // If second entry with this name
+    } else if (typeof query_string[key] === "string") {
+      var arr = [query_string[key], decodeURIComponent(value)];
+      query_string[key] = arr;
+      // If third or later entry with this name
+    } else {
+      query_string[key].push(decodeURIComponent(value));
+    }
+  }
+  return query_string;
+}
+var query_string = window.location.search.replace('?','');
+if(query_string != '')
+{
+  var parsed_qs = parse_query_string(query_string);
+  var makequery = '';
+  for(key in parsed_qs) {
+    makequery = makequery + key +'='+ parsed_qs[key]+'&';
+  }
+  var finalQueryStr = makequery.substring(0,makequery.length-1);
+  // Get query String
+     $(document).ready(function(){
+          $('a').each(function(){
+              var oldUrl = $(this).attr("href");
+            if(oldUrl.indexOf('#') > -1){
+            }else{
+            if(oldUrl.includes("?"))
+            {
+              $(this).attr("href", oldUrl+"&"+finalQueryStr);
+            }
+            else
+            {
+            $(this).attr("href", oldUrl+"?"+finalQueryStr);
+            }
+            }
+          });
+      });
+}
+else
+{
+  var finalQueryStr = '';
+}
+</script>
+  <script>
+document.addEventListener('DOMContentLoaded',() => {
+  if(document.querySelector('a[data-atc-btn]')) {
+    document.querySelector('a[data-atc-btn]').addEventListener('click', () => {
+      event.preventDefault()
+      let atc_urls = [
+        ['https://igkhair.com/cart/41436487057452:1','https://www.igkhair.com/tools/recurring/checkout_link?magic=eyJpdGVtcyI6IFt7ImlkIjogNDE0MzY0ODcwNTc0NTIsICJxdWFudGl0eSI6IDEsICJzZWxsaW5nX3BsYW4iOiA3Nzg1Njc3MjQsICJzZWxsaW5nX3BsYW5fZ3JvdXBfaWQiOiAxNjk5MDE5fV19&store_id=147823'],
+        ['https://igkhair.com/cart/41436496166956:1','https://www.igkhair.com/tools/recurring/checkout_link?magic=eyJpdGVtcyI6IFt7ImlkIjogNDE0MzY0OTYxNjY5NTYsICJxdWFudGl0eSI6IDEsICJzZWxsaW5nX3BsYW4iOiA3Nzg3OTcxMDAsICJzZWxsaW5nX3BsYW5fZ3JvdXBfaWQiOiAxNzAxNjQ2fV19&store_id=147823'],
+        ['https://igkhair.com/cart/41436493217836:1','https://www.igkhair.com/tools/recurring/checkout_link?magic=eyJpdGVtcyI6IFt7ImlkIjogNDE0MzY0OTMyMTc4MzYsICJxdWFudGl0eSI6IDEsICJzZWxsaW5nX3BsYW4iOiA3Nzg3NjQzMzIsICJzZWxsaW5nX3BsYW5fZ3JvdXBfaWQiOiAxNzAxNjQzfV19&store_id=147823']
+      ];
+      let subscription = document.querySelector('#ProductSubTabs .w-tab-link.w--current').dataset.productSubscription,
+          bundle = document.querySelector('#ProductQtyTabs .w-tab-link.w--current').dataset.variantBundle;
+      if ('URLSearchParams' in window) {
+        let Params = new URLSearchParams(window.location.search),
+            redirect = new URL(atc_urls[bundle][subscription]);
+        for (const [key, value] of Params.entries()) {
+          redirect.searchParams.append(key,value);
+        }
+        window.location.replace(redirect.href)
+      } else {
+        window.location.replace(atc_urls[bundle][subscription]+"&"+finalQueryStr)
+      }
+    });
+  }
+  if(document.querySelector('a[data-atc-pack-btn]')) {
+    document.querySelectorAll('a[data-atc-pack-btn]').forEach(packButton => {
+        packButton.addEventListener('click', () => {
+        event.preventDefault()
+        let atc_urls = [
+            ['https://igkhair.com/cart/41436502392876:1','https://www.igkhair.com/tools/recurring/checkout_link?magic=eyJpdGVtcyI6IFt7ImlkIjogNDE0MzY1MDIzOTI4NzYsICJxdWFudGl0eSI6IDEsICJzZWxsaW5nX3BsYW4iOiA3Nzg2MDA0OTIsICJzZWxsaW5nX3BsYW5fZ3JvdXBfaWQiOiAxNjk5MDMwfV19&store_id=147823'],
+            ['https://igkhair.com/cart/41436504457260:1','https://www.igkhair.com/tools/recurring/checkout_link?magic=eyJpdGVtcyI6IFt7ImlkIjogNDE0MzY1MDQ0NTcyNjAsICJxdWFudGl0eSI6IDEsICJzZWxsaW5nX3BsYW4iOiA3Nzg4Mjk4NjgsICJzZWxsaW5nX3BsYW5fZ3JvdXBfaWQiOiAxNzAxNjYyfV19&store_id=147823'],
+            ['https://igkhair.com/cart/41436509700140:1','https://www.igkhair.com/tools/recurring/checkout_link?magic=eyJpdGVtcyI6IFt7ImlkIjogNDE0MzY1MDk3MDAxNDAsICJxdWFudGl0eSI6IDEsICJzZWxsaW5nX3BsYW4iOiA3NzgzMzgzNDgsICJzZWxsaW5nX3BsYW5fZ3JvdXBfaWQiOiAxNjk4OTg5fV19&store_id=147823']
+        ];
+        let subscription = document.querySelector('#ProductPackSubTabs .w-tab-link.w--current').dataset.mainSubscription,
+            pack = event.target.dataset.atcPackBtn;
+        if ('URLSearchParams' in window) {
+            let Params = new URLSearchParams(window.location.search),
+                redirect = new URL(atc_urls[pack][subscription]);
+            for (const [key, value] of Params.entries()) {
+            redirect.searchParams.append(key,value);
+            }
+            window.location.replace(redirect.href)
+        } else {
+            window.location.replace(atc_urls[pack][subscription]+"&"+finalQueryStr)
+        }
+        });
+    });
+  }
+})
+</script>
+
+<script src="/assets/js/udesly-11ty.min.js" async="" defer=""></script>{{ settings.site.footer_additional_content }}<script type="module">import*as UdeslyBanner from"https://cdn.jsdelivr.net/npm/udesly-ad-banner@0.0.1/loader/index.js";UdeslyBanner.defineCustomElements(),document.body.append(document.createElement("udesly-banner"));</script></body></html>
